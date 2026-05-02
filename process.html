@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>The Elite 4 | Premium MN Landscape Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f4a23',
+                            primary: '#12a638',
+                            light: '#e8f3ec',
+                            text: '#2d3748',
+                            gray: '#718096'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .blob-shape {
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        }
+        .blob-shape-2 {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .wavy-bg {
+            background: linear-gradient(to bottom, #e8f3ec 0%, #e8f3ec 85%, #ffffff 85%, #ffffff 100%);
+        }
+        .curved-bottom {
+            border-bottom-left-radius: 50% 10%;
+            border-bottom-right-radius: 50% 10%;
+        }
+        .mask-blob {
+            clip-path: path('M45.7,-76.1C58.9,-69.3,69.2,-55.4,78.2,-41.2C87.2,-27,94.9,-12.4,93.5,1.5C92.1,15.4,81.6,28.6,71.4,40.5C61.2,52.4,51.3,63,39.2,71.2C27,79.4,12.6,85.2,-1.9,88.4C-16.4,91.6,-31.1,92.2,-44.6,86C-58.1,79.8,-70.4,66.8,-78.9,52.1C-87.4,37.4,-92.1,21,-91.3,5.3C-90.5,-10.4,-84.2,-25.3,-74.8,-37.7C-65.4,-50.1,-52.9,-60.1,-39.6,-66.9C-26.3,-73.7,-12.2,-77.3,1.6,-79.2C15.4,-81.1,32.5,-82.9,45.7,-76.1Z');
+            transform: scale(5) translate(10px, 10px);
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-text bg-white antialiased overflow-x-hidden">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-dark text-white text-xs py-3 px-6 hidden md:flex justify-between items-center">
+        <div class="flex gap-6">
+            <span><i class="fas fa-map-marker-alt mr-2 text-brand-primary"></i> Minneapolis, MN</span>
+            <span><i class="fas fa-envelope mr-2 text-brand-primary"></i> strike@elite4.com</span>
+        </div>
+        <div class="flex gap-4">
+            <a href="#" class="hover:text-brand-primary"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="hover:text-brand-primary"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="hover:text-brand-primary"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="hover:text-brand-primary"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white py-4 px-6 md:px-12 flex justify-between items-center shadow-sm sticky top-0 z-50">
+        <a href="index.html" class="flex items-center gap-2">
+            <i class="fas fa-leaf text-brand-primary text-3xl"></i>
+            <span class="font-heading font-black text-2xl text-brand-dark uppercase tracking-tight">The Elite 4</span>
+        </a>
+        <div class="hidden lg:flex gap-8 font-semibold text-sm">
+            <a href="index.html" class="text-brand-primary">Home</a>
+            <a href="about.html" class="hover:text-brand-primary transition">About Us</a>
+            <a href="services.html" class="hover:text-brand-primary transition">Services</a>
+            <a href="portfolio.html" class="hover:text-brand-primary transition">Portfolio</a>
+            <a href="process.html" class="hover:text-brand-primary transition">Process</a>
+            <a href="journal.html" class="hover:text-brand-primary transition">Journal</a>
+        </div>
+        <div class="hidden lg:flex items-center gap-6">
+            <button class="text-brand-dark hover:text-brand-primary"><i class="fas fa-search text-lg"></i></button>
+            <div class="flex items-center gap-3 border-l pl-6 border-gray-200">
+                <i class="fas fa-phone-alt text-brand-primary text-xl bg-brand-light p-3 rounded-full"></i>
+                <div class="flex flex-col">
+                    <span class="text-xs text-brand-gray">Call Us</span>
+                    <span class="font-bold text-brand-dark">+1 (612) 555-0198</span>
+                </div>
+            </div>
+        </div>
+        <button id="mobile-menu-btn" class="lg:hidden text-brand-dark text-2xl"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] flex flex-col pt-24 pb-12 px-8 overflow-y-auto hidden opacity-0 transition-opacity duration-300">
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-brand-dark text-3xl hover:text-brand-primary transition-colors">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col gap-8 w-full mt-10">
+            <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="index.html">Home</a>
+            <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="about.html">About Us</a>
+            <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="services.html">Services</a>
+            <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="portfolio.html">Portfolio</a>
+            <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="process.html">Process</a>
+            <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="journal.html">Journal</a>
+            <a href="contact.html" class="mt-6 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-center shadow-lg">Request Consultation</a>
+        </div>
+    </div>
+
+
+    <!-- Process Hero -->
+    <header class="bg-brand-light pt-20 pb-32 px-6 md:px-12 relative curved-bottom overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="flex items-center justify-center gap-2 text-brand-primary font-bold mb-4 uppercase tracking-widest text-sm">
+                <i class="fas fa-hammer"></i>
+                <span>The Anatomy of a Strike</span>
+            </div>
+            <h1 class="font-heading text-5xl md:text-7xl font-extrabold text-brand-dark leading-[1.1] mb-6">
+                Our 48+ Hour Masterwork
+            </h1>
+            <p class="text-brand-gray text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
+                We don't do drawn-out construction zones. We operate exclusively on weekends, starting at 7:30 AM. We execute with military precision to deliver perfection without disrupting your work week.
+            </p>
+            <a href="contact.html" class="inline-block bg-brand-primary text-white px-8 py-4 rounded-full font-bold hover:bg-green-600 transition shadow-lg shadow-green-500/30">Book a Consultation</a>
+        </div>
+        <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0,50 C320,150 420,-50 1440,50 L1440,100 L0,100 Z"></path></svg>
+    </header>
+
+    <!-- Step 1 -->
+    <section class="py-20 px-6 max-w-7xl mx-auto relative">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute -inset-4 bg-brand-light blob-shape z-0"></div>
+                <div class="relative z-10 blob-shape overflow-hidden border-8 border-white shadow-xl h-[400px]">
+                    <img src="./image_consultation.png" alt="Consultation" class="w-full h-full object-cover"/>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+                <span class="text-brand-primary font-bold tracking-widest text-sm uppercase block">Step 01</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
+                    The Consultation & Masterplan
+                </h2>
+                <p class="text-brand-gray leading-relaxed text-lg">
+                    Before we ever break ground, we sit down with you to architect a masterplan. We discuss your vision, analyze your property's topography, and select the highest-grade Tier-1 materials. Every cut, every stone, and every plant is planned with absolute precision to ensure a flawless execution.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="py-20 px-6 max-w-7xl mx-auto relative">
+        <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute -inset-4 bg-brand-light blob-shape-2 z-0"></div>
+                <div class="relative z-10 blob-shape-2 overflow-hidden border-8 border-white shadow-xl h-[400px]">
+                    <img src="./image_site_prep.png" alt="Site Prep" class="w-full h-full object-cover"/>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+                <span class="text-brand-primary font-bold tracking-widest text-sm uppercase block">Step 02</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
+                    Saturday 7:30 AM: Site Prep
+                </h2>
+                <p class="text-brand-gray leading-relaxed text-lg">
+                    We arrive early Saturday morning at exactly 7:30 AM with heavy machinery. We don't waste time. Our first priority is precise excavation and site preparation. We protect your existing landscape and property while rapidly clearing the canvas for your new architectural feature.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="py-20 px-6 max-w-7xl mx-auto relative">
+        <div class="flex flex-col md:flex-row gap-16 items-center">
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute -inset-4 bg-brand-light blob-shape z-0"></div>
+                <div class="relative z-10 blob-shape overflow-hidden border-8 border-white shadow-xl h-[400px]">
+                    <img src="./image_the_strike.png" alt="The Strike" class="w-full h-full object-cover"/>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+                <span class="text-brand-primary font-bold tracking-widest text-sm uppercase block">Step 03</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
+                    The Weekend Strike
+                </h2>
+                <p class="text-brand-gray leading-relaxed text-lg">
+                    This is where the magic happens. All four founders work in perfect unison. It is a relentless, synchronized deployment operating from morning until dark. We lay the structural foundation and begin the precision stone cuts. Because we only work weekends, we can focus 100% of our energy on your estate.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step 4 -->
+    <section class="py-20 px-6 max-w-7xl mx-auto relative mb-20">
+        <div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute -inset-4 bg-brand-light blob-shape-2 z-0"></div>
+                <div class="relative z-10 blob-shape-2 overflow-hidden border-8 border-white shadow-xl h-[400px]">
+                    <img src="./image_the_handover.png" alt="The Handover" class="w-full h-full object-cover"/>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-6">
+                <span class="text-brand-primary font-bold tracking-widest text-sm uppercase block">Step 04</span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-dark leading-tight">
+                    Sunday Sunset: The Handover
+                </h2>
+                <p class="text-brand-gray leading-relaxed text-lg">
+                    Our goal is to hand over a pristine, completely finished landscape by Sunday sunset. You go to work on Monday, and your yard is transformed. However, we never sacrifice quality for speed. If a complex masterwork requires more time, we will clean the site and return the following weekend to achieve absolute perfection.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-brand-dark mx-6 md:mx-auto max-w-7xl rounded-[40px] overflow-hidden relative shadow-2xl mb-24 text-center p-16">
+        <div class="relative z-10 text-white">
+            <h2 class="font-heading text-4xl font-bold mb-6">Ready to schedule your Strike?</h2>
+            <p class="text-gray-300 mb-8 max-w-xl mx-auto">Skip the months-long construction zones. Get a premium hardscape built by the owners, completed over the weekend.</p>
+            <a href="contact.html" class="inline-block bg-brand-primary text-white px-8 py-4 rounded-full font-bold hover:bg-green-600 transition shadow-lg">Request Consultation</a>
+        </div>
+    </section>
+
+<footer class="bg-[#0a0a0a] text-white pt-20 pb-8 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div>
+                <a href="index.html" class="flex items-center gap-2 mb-6">
+                    <i class="fas fa-leaf text-brand-primary text-3xl"></i>
+                    <span class="font-heading font-black text-2xl uppercase tracking-tight">The Elite 4</span>
+                </a>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Minnesota's premier landscaping atelier. Symmetrically designed, built with grit, finished with grace.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative inline-block">
+                    Links
+                    <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
+                </h4>
+                <ul class="space-y-3">
+                    <li><a href="about.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> About Us</a></li>
+                    <li><a href="services.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Services</a></li>
+                    <li><a href="portfolio.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Portfolio</a></li>
+                    <li><a href="process.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Process</a></li>
+                    <li><a href="journal.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Journal</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative inline-block">
+                    Service Areas
+                    <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
+                </h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Minneapolis</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Saint Paul</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Edina</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Wayzata</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Minnetonka</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-heading font-bold text-lg mb-6 relative inline-block">
+                    Popular Posts
+                    <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
+                </h4>
+                <div class="space-y-4">
+                    <a href="post-symmetry.html" class="flex gap-4 group">
+                        <img src="./luxury_patio.webp" class="w-16 h-16 rounded-lg object-cover" alt="Post"/>
+                        <div>
+                            <h5 class="text-sm font-bold group-hover:text-brand-primary transition leading-tight">The Importance of Symmetry</h5>
+                            <span class="text-xs text-brand-primary"><i class="fas fa-calendar-alt mr-1"></i> Oct 12, 2026</span>
+                        </div>
+                    </a>
+                    <a href="post-retaining-walls.html" class="flex gap-4 group">
+                        <img src="./retaining_wall.webp" class="w-16 h-16 rounded-lg object-cover" alt="Post"/>
+                        <div>
+                            <h5 class="text-sm font-bold group-hover:text-brand-primary transition leading-tight">Limestone Retaining Walls</h5>
+                            <span class="text-xs text-brand-primary"><i class="fas fa-calendar-alt mr-1"></i> Sep 28, 2026</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-4">
+            <p class="text-sm text-gray-400">© 2026 The Elite 4. Architectural Landscaping Excellence.</p>
+            <div class="flex gap-6 text-sm text-gray-400">
+                <a href="#" class="hover:text-brand-primary transition">Terms & Conditions</a>
+                <a href="#" class="hover:text-brand-primary transition">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+
+    
+    <!-- Custom JS -->
+    <script>
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileBtn && closeBtn && mobileMenu) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+                setTimeout(() => mobileMenu.classList.remove('opacity-0'), 10);
+                document.body.style.overflow = 'hidden';
+            });
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+                document.body.style.overflow = '';
+            });
+        }
+    </script>
+
+    <!-- AI Concierge Widget -->
+    <div id="ai-widget-container" class="fixed bottom-6 right-6 z-[200]">
+        <!-- Chat Button -->
+        <button id="ai-toggle-btn" class="bg-brand-primary text-white w-14 h-14 rounded-full shadow-2xl hover:scale-110 hover:bg-green-600 transition-all flex items-center justify-center group relative border-2 border-white">
+            <i class="fas fa-robot text-2xl group-hover:rotate-12 transition-transform"></i>
+            <span class="absolute -top-2 -right-2 flex h-4 w-4">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-4 w-4 bg-green-500 border border-white"></span>
+            </span>
+        </button>
+
+        <!-- Chat Box -->
+        <div id="ai-chat-box" class="absolute bottom-20 right-0 w-80 md:w-96 bg-white rounded-2xl shadow-2xl border border-gray-100 hidden flex-col overflow-hidden transform origin-bottom-right transition-all duration-300 opacity-0 scale-95">
+            <!-- Header -->
+            <div class="bg-brand-dark text-white p-5 flex justify-between items-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-brand-primary opacity-10 blob-shape"></div>
+                <div class="flex items-center gap-3 relative z-10">
+                    <div class="bg-brand-primary p-2 rounded-full"><i class="fas fa-leaf text-white"></i></div>
+                    <div>
+                        <h4 class="font-heading font-bold text-sm tracking-widest">Elite AI Assistant</h4>
+                        <p class="text-[10px] text-green-300 uppercase tracking-widest flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span> Online</p>
+                    </div>
+                </div>
+                <button id="ai-close-btn" class="text-white hover:text-brand-primary transition-colors p-1 relative z-10">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+            </div>
+            
+            <!-- Chat Area -->
+            <div id="ai-messages" class="p-5 h-80 overflow-y-auto bg-brand-light/30 flex flex-col gap-4 text-sm font-sans">
+                <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-gray-100 self-start max-w-[85%]">
+                    <p class="text-brand-gray leading-relaxed">Hi! I'm the Elite 4 Assistant. You can ask me questions about our services, process, or hours.</p>
+                </div>
+            </div>
+            
+            <!-- Input Area -->
+            <div class="p-4 bg-white border-t border-gray-100 flex gap-2">
+                <input type="text" id="ai-input" class="w-full bg-brand-light/50 border border-gray-200 rounded-full px-4 py-2 focus:outline-none focus:border-brand-primary text-sm transition" placeholder="Type a question...">
+                <button id="ai-send-btn" class="bg-brand-primary text-white w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center hover:bg-green-600 transition shadow-md">
+                    <i class="fas fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    window.addEventListener('load', () => {
+        const aiToggleBtn = document.getElementById('ai-toggle-btn');
+        const aiChatBox = document.getElementById('ai-chat-box');
+        const aiCloseBtn = document.getElementById('ai-close-btn');
+        const aiMessages = document.getElementById('ai-messages');
+        const aiInput = document.getElementById('ai-input');
+        const aiSendBtn = document.getElementById('ai-send-btn');
+
+        function toggleChat() {
+            if (aiChatBox.classList.contains('hidden')) {
+                aiChatBox.classList.remove('hidden');
+                setTimeout(() => {
+                    aiChatBox.classList.remove('opacity-0', 'scale-95');
+                    aiChatBox.classList.add('opacity-100', 'scale-100');
+                }, 10);
+            } else {
+                aiChatBox.classList.remove('opacity-100', 'scale-100');
+                aiChatBox.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => { aiChatBox.classList.add('hidden'); }, 300);
+            }
+        }
+
+        if(aiToggleBtn && aiChatBox && aiCloseBtn) {
+            aiToggleBtn.addEventListener('click', toggleChat);
+            aiCloseBtn.addEventListener('click', toggleChat);
+        }
+        
+        const qaDB = [
+            { keywords: ['hours', 'time', 'when', 'weekend', 'days'], answer: "We work weekends only but we start from 7:30 am until we're done. We complete jobs in 48 hours or more, returning the following weekend if necessary to ensure absolute perfection." },
+            { keywords: ['service', 'do you do', 'offer', 'patio', 'pool', 'wall'], answer: "We specialize in Luxury Patios, Retaining Walls, and Geometric Pools. We source Tier-1 materials and handle the entire architectural masterplan and execution." },
+            { keywords: ['contact', 'call', 'phone', 'email', 'consultation'], answer: "You can book a free consultation via our Contact page, or call us directly at +1 (612) 555-0198. You can also email strike@elite4.com." },
+            { keywords: ['cost', 'price', 'pricing', 'estimate'], answer: "Because every estate is unique, pricing requires a consultation. Our focus is strictly high-end, uncompromising quality using Tier-1 materials." },
+            { keywords: ['who', 'team', 'owners', 'founders'], answer: "We are Gerald, Cole, Dom, and Gerardo. When you hire us, the owners are the ones doing the work. No subcontractors." },
+            { keywords: ['process', 'how', '48', 'hour'], answer: "Our signature Process involves a Saturday 7:30 AM site prep, a massive structural strike starting at 7:30 AM, and Sunday handover. If a project is exceptionally complex, we will return the following weekend to ensure perfection." }
+        ];
+
+        function handleSend() {
+            const val = aiInput.value.trim();
+            if(!val) return;
+            
+            // Add user msg
+            const userMsg = document.createElement('div');
+            userMsg.className = 'bg-brand-primary text-white p-3 rounded-2xl rounded-tr-sm shadow-sm self-end max-w-[85%] text-sm';
+            userMsg.textContent = val;
+            aiMessages.appendChild(userMsg);
+            aiInput.value = '';
+            aiMessages.scrollTop = aiMessages.scrollHeight;
+            
+            // Add typing indicator
+            const typingMsg = document.createElement('div');
+            typingMsg.className = 'bg-white p-3 rounded-2xl rounded-tl-sm shadow-sm border border-gray-100 self-start text-brand-gray text-xs flex gap-1';
+            typingMsg.innerHTML = '<i class="fas fa-circle text-[6px] animate-bounce"></i><i class="fas fa-circle text-[6px] animate-bounce" style="animation-delay: 0.2s"></i><i class="fas fa-circle text-[6px] animate-bounce" style="animation-delay: 0.4s"></i>';
+            aiMessages.appendChild(typingMsg);
+            aiMessages.scrollTop = aiMessages.scrollHeight;
+            
+            setTimeout(() => {
+                typingMsg.remove();
+                let foundAnswer = "I'm not exactly sure about that! For specific details, please Request a Consultation or call us at +1 (612) 555-0198.";
+                const lowerVal = val.toLowerCase();
+                for(let item of qaDB) {
+                    if(item.keywords.some(kw => lowerVal.includes(kw))) {
+                        foundAnswer = item.answer;
+                        break;
+                    }
+                }
+                
+                const aiMsg = document.createElement('div');
+                aiMsg.className = 'bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-gray-100 self-start max-w-[85%] text-brand-gray leading-relaxed';
+                aiMsg.textContent = foundAnswer;
+                aiMessages.appendChild(aiMsg);
+                aiMessages.scrollTop = aiMessages.scrollHeight;
+            }, 800);
+        }
+        
+        if(aiSendBtn && aiInput) {
+            aiSendBtn.addEventListener('click', handleSend);
+            aiInput.addEventListener('keypress', (e) => {
+                if(e.key === 'Enter') handleSend();
+            });
+        }
+    });
+    </script>
+</body>
+</html>
+
+</body>
+</html>
