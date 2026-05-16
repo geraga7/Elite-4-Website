@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+import os
+import re
+
+# The new HTML shell pieces
+NEW_HEAD = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -29,23 +33,10 @@
         }
     </script>
     <style>
-        .blob-shape {
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-        }
-        .blob-shape-2 {
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        }
-        .wavy-bg {
-            background: linear-gradient(to bottom, #e8f3ec 0%, #e8f3ec 85%, #ffffff 85%, #ffffff 100%);
-        }
-        .curved-bottom {
-            border-bottom-left-radius: 50% 10%;
-            border-bottom-right-radius: 50% 10%;
-        }
-        .mask-blob {
-            clip-path: path('M45.7,-76.1C58.9,-69.3,69.2,-55.4,78.2,-41.2C87.2,-27,94.9,-12.4,93.5,1.5C92.1,15.4,81.6,28.6,71.4,40.5C61.2,52.4,51.3,63,39.2,71.2C27,79.4,12.6,85.2,-1.9,88.4C-16.4,91.6,-31.1,92.2,-44.6,86C-58.1,79.8,-70.4,66.8,-78.9,52.1C-87.4,37.4,-92.1,21,-91.3,5.3C-90.5,-10.4,-84.2,-25.3,-74.8,-37.7C-65.4,-50.1,-52.9,-60.1,-39.6,-66.9C-26.3,-73.7,-12.2,-77.3,1.6,-79.2C15.4,-81.1,32.5,-82.9,45.7,-76.1Z');
-            transform: scale(5) translate(10px, 10px);
-        }
+        .blob-shape { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+        .blob-shape-2 { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        .wavy-bg { background: linear-gradient(to bottom, #e8f3ec 0%, #e8f3ec 85%, #ffffff 85%, #ffffff 100%); }
+        .curved-bottom { border-bottom-left-radius: 50% 10%; border-bottom-right-radius: 50% 10%; }
     </style>
 </head>
 <body class="font-sans text-brand-text bg-white antialiased overflow-x-hidden">
@@ -71,7 +62,7 @@
             <span class="font-heading font-black text-2xl text-brand-dark uppercase tracking-tight">The Elite 4</span>
         </a>
         <div class="hidden lg:flex gap-8 font-semibold text-sm">
-            <a href="index.html" class="text-brand-primary">Home</a>
+            <a href="index.html" class="hover:text-brand-primary transition">Home</a>
             <a href="about.html" class="hover:text-brand-primary transition">About Us</a>
             <a href="services.html" class="hover:text-brand-primary transition">Services</a>
             <a href="portfolio.html" class="hover:text-brand-primary transition">Portfolio</a>
@@ -79,7 +70,7 @@
             <a href="journal.html" class="hover:text-brand-primary transition">Journal</a>
         </div>
         <div class="hidden lg:flex items-center gap-6">
-            <button class="text-brand-dark hover:text-brand-primary"><i class="fas fa-search text-lg"></i></button>
+            <a href="contact.html" class="bg-brand-primary text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition shadow-lg text-sm">Request Consultation</a>
             <div class="flex items-center gap-3 border-l pl-6 border-gray-200">
                 <i class="fas fa-phone-alt text-brand-primary text-xl bg-brand-light p-3 rounded-full"></i>
                 <div class="flex flex-col">
@@ -90,7 +81,7 @@
         </div>
         <button id="mobile-menu-btn" class="lg:hidden text-brand-dark text-2xl"><i class="fas fa-bars"></i></button>
     </nav>
-
+    
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] flex flex-col pt-24 pb-12 px-8 overflow-y-auto hidden opacity-0 transition-opacity duration-300">
         <button id="close-menu-btn" class="absolute top-6 right-6 text-brand-dark text-3xl hover:text-brand-primary transition-colors">
@@ -103,33 +94,14 @@
             <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="portfolio.html">Portfolio</a>
             <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="process.html">Process</a>
             <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="journal.html">Journal</a>
-            <a href="contact.html" class="mt-6 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-center shadow-lg">
-<span class="block text-base font-bold">Request Consultation <i class="fas fa-arrow-right ml-2"></i></span><span class="block text-[10px] font-normal uppercase tracking-wider opacity-90 mt-0.5">Guaranteed 48+ Hour Turnaround</span>
-</a>
+            <a href="contact.html" class="mt-6 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-center shadow-lg">Request Consultation</a>
         </div>
     </div>
+"""
 
-
-<main class="w-full pt-32 pb-20 px-6 max-w-4xl mx-auto">
-    <div class="mb-10 text-center">
-        <span class="font-sans text-xs uppercase tracking-widest text-brand-primary mb-4 block font-bold">Engineering</span>
-        <h1 class="font-heading text-4xl md:text-6xl font-bold mb-6 text-brand-dark">The Anatomy of a Tier-1 Retaining Wall</h1>
-        <p class="text-brand-gray text-sm">By Cole • Sep 28, 2026</p>
-    </div>
-    <div class="w-full h-[400px] rounded-3xl overflow-hidden mb-12 shadow-2xl">
-        <img src="./retaining_wall.webp" alt="Retaining Wall" class="w-full h-full object-cover">
-    </div>
-    <div class="prose prose-lg max-w-none text-brand-gray space-y-6">
-        <p>A retaining wall is the unsung hero of landscape architecture. While it serves a critical structural purpose—holding back tons of earth—it must also act as a striking visual feature.</p>
-        <p>We refuse to build standard block walls. We utilize imported limestone, massive boulder formations, and precisely engineered drainage systems to ensure your wall lasts for generations. During our 48+ hour strikes, we employ heavy excavation to dig deep footings, ensuring zero movement even during harsh Minnesota winters.</p>
-        <p>Never compromise on engineering. A failing wall is a liability; an Elite 4 wall is a fortress of beauty.</p>
-    </div>
-    <div class="mt-16 text-center border-t border-gray-100 pt-12">
-        <a href="contact.html" class="inline-block bg-brand-primary text-white px-8 py-4 rounded-full font-bold hover:bg-green-600 transition shadow-lg">Secure Your Property</a>
-    </div>
-</main>
-
-<footer class="bg-[#0a0a0a] text-white pt-20 pb-8 px-6">
+NEW_FOOTER = """
+    <!-- Footer -->
+    <footer class="bg-[#0a0a0a] text-white pt-20 pb-8 px-6 mt-20">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div>
                 <a href="index.html" class="flex items-center gap-2 mb-6">
@@ -145,69 +117,40 @@
                     <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-primary transition"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-            
             <div>
-                <h4 class="font-heading font-bold text-lg mb-6 relative inline-block">
-                    Links
-                    <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
-                </h4>
+                <h4 class="font-heading font-bold text-lg mb-6 relative inline-block">Links<span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span></h4>
                 <ul class="space-y-3">
                     <li><a href="about.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> About Us</a></li>
                     <li><a href="services.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Services</a></li>
                     <li><a href="portfolio.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Portfolio</a></li>
                     <li><a href="process.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Process</a></li>
-                    <li><a href="journal.html" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Journal</a></li>
                 </ul>
             </div>
-
             <div>
-                <h4 class="font-heading font-bold text-lg mb-6 relative inline-block">
-                    Service Areas
-                    <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
-                </h4>
+                <h4 class="font-heading font-bold text-lg mb-6 relative inline-block">Service Areas<span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span></h4>
                 <ul class="space-y-3">
                     <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Minneapolis</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Saint Paul</a></li>
                     <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Edina</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Wayzata</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-brand-primary transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs"></i> Minnetonka</a></li>
                 </ul>
             </div>
-
             <div>
-                <h4 class="font-heading font-bold text-lg mb-6 relative inline-block">
-                    Popular Posts
-                    <span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span>
-                </h4>
+                <h4 class="font-heading font-bold text-lg mb-6 relative inline-block">Popular Posts<span class="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-brand-primary"></span></h4>
                 <div class="space-y-4">
-                    <a href="post-symmetry.html" class="flex gap-4 group">
+                    <a href="journal.html" class="flex gap-4 group">
                         <img src="./luxury_patio.webp" class="w-16 h-16 rounded-lg object-cover" alt="Post"/>
                         <div>
-                            <h5 class="text-sm font-bold group-hover:text-brand-primary transition leading-tight">The Importance of Symmetry</h5>
+                            <h5 class="text-sm font-bold group-hover:text-brand-primary transition leading-tight">Symmetry</h5>
                             <span class="text-xs text-brand-primary"><i class="fas fa-calendar-alt mr-1"></i> Oct 12, 2026</span>
-                        </div>
-                    </a>
-                    <a href="post-retaining-walls.html" class="flex gap-4 group">
-                        <img src="./retaining_wall.webp" class="w-16 h-16 rounded-lg object-cover" alt="Post"/>
-                        <div>
-                            <h5 class="text-sm font-bold group-hover:text-brand-primary transition leading-tight">Limestone Retaining Walls</h5>
-                            <span class="text-xs text-brand-primary"><i class="fas fa-calendar-alt mr-1"></i> Sep 28, 2026</span>
                         </div>
                     </a>
                 </div>
             </div>
         </div>
-        
-        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-4">
-            <p class="text-sm text-gray-400">© 2026 The Elite 4. Architectural Landscaping Excellence.</p>
-            <div class="flex gap-6 text-sm text-gray-400">
-                <a href="#" class="hover:text-brand-primary transition">Terms & Conditions</a>
-                <a href="#" class="hover:text-brand-primary transition">Privacy Policy</a>
-            </div>
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-4 text-sm text-gray-400">
+            <p>© 2026 The Elite 4. Architectural Landscaping Excellence.</p>
         </div>
     </footer>
-
-
     
     <!-- Custom JS -->
     <script>
@@ -229,81 +172,9 @@
             });
         }
     </script>
+"""
 
-    
-    <!-- Interactive Estimator & Slider JS -->
-    <script>
-    window.addEventListener('load', () => {
-        // Estimator Logic
-        const estType = document.getElementById('est-type');
-        const estSize = document.getElementById('est-size');
-        const estPrice = document.getElementById('est-price');
-        const estTime = document.getElementById('est-time');
-
-        const pricing = {
-            patio: { standard: "$25,000 - $40,000", premium: "$40,000 - $70,000", compound: "$70,000 - $120,000+" },
-            wall: { standard: "$18,000 - $35,000", premium: "$35,000 - $60,000", compound: "$60,000 - $95,000+" },
-            pool: { standard: "$65,000 - $95,000", premium: "$95,000 - $150,000", compound: "$150,000 - $250,000+" },
-            full: { standard: "$90,000 - $140,000", premium: "$140,000 - $220,000", compound: "$220,000 - $400,000+" }
-        };
-
-        const timelines = {
-            standard: "48+ Hours (Fri Eve - Sun Sunset)",
-            premium: "48+ Hours (Rollover to 2nd Weekend)",
-            compound: "48+ Hours (Dedicated 2-3 Weekends)"
-        };
-
-        function updateEstimator() {
-            if(estType && estSize && estPrice && estTime) {
-                const t = estType.value;
-                const s = estSize.value;
-                estPrice.textContent = pricing[t][s];
-                estTime.textContent = timelines[s];
-            }
-        }
-
-        if(estType && estSize) {
-            estType.addEventListener('change', updateEstimator);
-            estSize.addEventListener('change', updateEstimator);
-        }
-
-        // Before/After Slider Logic
-        const baContainer = document.getElementById('ba-container');
-        const baBefore = document.getElementById('ba-before');
-        const baHandle = document.getElementById('ba-handle');
-        const baBeforeImg = document.getElementById('ba-before-img');
-
-        if(baContainer && baBefore && baHandle && baBeforeImg) {
-            function adjustWidth() {
-                baBeforeImg.style.width = baContainer.offsetWidth + 'px';
-            }
-            adjustWidth();
-            window.addEventListener('resize', adjustWidth);
-
-            let isDragging = false;
-
-            function onMove(e) {
-                if(!isDragging) return;
-                const rect = baContainer.getBoundingClientRect();
-                let x = (e.clientX || e.touches[0].clientX) - rect.left;
-                x = Math.max(0, Math.min(x, rect.width));
-                const pct = (x / rect.width) * 100;
-                baBefore.style.width = pct + '%';
-                baHandle.style.left = pct + '%';
-            }
-
-            baHandle.addEventListener('mousedown', () => isDragging = true);
-            baContainer.addEventListener('mouseup', () => isDragging = false);
-            baContainer.addEventListener('mouseleave', () => isDragging = false);
-            baContainer.addEventListener('mousemove', onMove);
-
-            baHandle.addEventListener('touchstart', () => isDragging = true);
-            baContainer.addEventListener('touchend', () => isDragging = false);
-            baContainer.addEventListener('touchmove', onMove);
-        }
-    });
-    </script>
-
+CHATBOT_HTML = """
     <!-- AI Concierge Widget -->
     <div id="ai-widget-container" class="fixed bottom-6 right-6 z-[200]">
         <!-- Chat Button -->
@@ -333,24 +204,6 @@
             </div>
             
             <!-- Chat Area -->
-            
-            <!-- Quick Ask Prompts -->
-            <div class="px-5 py-3 bg-brand-light/40 border-t border-b border-gray-100 flex flex-wrap gap-2 max-h-28 overflow-y-auto">
-                <span class="text-[10px] font-bold text-brand-dark uppercase tracking-wider w-full block mb-1"><i class="fas fa-bolt text-brand-primary mr-1"></i> Interactive Quick Prompts:</span>
-                <button class="ai-quick-btn bg-white hover:bg-brand-primary hover:text-white text-brand-dark border border-gray-200 text-xs px-3 py-1.5 rounded-full transition shadow-sm font-medium flex items-center gap-1.5">
-                    ⚡ 48+ Hour Availability
-                </button>
-                <button class="ai-quick-btn bg-white hover:bg-brand-primary hover:text-white text-brand-dark border border-gray-200 text-xs px-3 py-1.5 rounded-full transition shadow-sm font-medium flex items-center gap-1.5">
-                    💎 Tier-1 Materials
-                </button>
-                <button class="ai-quick-btn bg-white hover:bg-brand-primary hover:text-white text-brand-dark border border-gray-200 text-xs px-3 py-1.5 rounded-full transition shadow-sm font-medium flex items-center gap-1.5">
-                    💰 Investment Tiers
-                </button>
-                <button class="ai-quick-btn bg-white hover:bg-brand-primary hover:text-white text-brand-dark border border-gray-200 text-xs px-3 py-1.5 rounded-full transition shadow-sm font-medium flex items-center gap-1.5">
-                    📅 Meet The Founders
-                </button>
-            </div>
-
             <div id="ai-messages" class="p-5 h-80 overflow-y-auto bg-brand-light/30 flex flex-col gap-4 text-sm font-sans">
                 <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-gray-100 self-start max-w-[85%]">
                     <p class="text-brand-gray leading-relaxed">Hi! I'm the Elite 4 Assistant. You can ask me questions about our services, process, or hours.</p>
@@ -396,12 +249,12 @@
         }
         
         const qaDB = [
-            { keywords: ['hours', 'time', 'when', 'weekend', 'days'], answer: "We work weekends only but we start from 7:30 am until we're done. We complete jobs in 48 hours or more, returning the following weekend if necessary to ensure absolute perfection." },
+            { keywords: ['hours', 'time', 'when', 'weekend', 'days'], answer: "We work weekends only but we start from 7:30 am until we're done. We try to strike everything in 48 hours, but if we need more time, we come back a different weekend or most likely the following weekend." },
             { keywords: ['service', 'do you do', 'offer', 'patio', 'pool', 'wall'], answer: "We specialize in Luxury Patios, Retaining Walls, and Geometric Pools. We source Tier-1 materials and handle the entire architectural masterplan and execution." },
             { keywords: ['contact', 'call', 'phone', 'email', 'consultation'], answer: "You can book a free consultation via our Contact page, or call us directly at +1 (612) 555-0198. You can also email strike@elite4.com." },
             { keywords: ['cost', 'price', 'pricing', 'estimate'], answer: "Because every estate is unique, pricing requires a consultation. Our focus is strictly high-end, uncompromising quality using Tier-1 materials." },
             { keywords: ['who', 'team', 'owners', 'founders'], answer: "We are Gerald, Cole, Dom, and Gerardo. When you hire us, the owners are the ones doing the work. No subcontractors." },
-            { keywords: ['process', 'how', '48', 'hour'], answer: "Our signature Process involves a Saturday 7:30 AM site prep, a massive structural strike starting at 7:30 AM, and Sunday handover. If a project is exceptionally complex, we will return the following weekend to ensure perfection." }
+            { keywords: ['process', 'how', '48', 'hour'], answer: "Our signature Process involves a Friday 5 PM site prep, a massive Saturday structural strike starting at 7:30 AM, and Sunday handover. If a project is exceptionally complex, we will return the following weekend to ensure perfection." }
         ];
 
         function handleSend() {
@@ -442,18 +295,6 @@
             }, 800);
         }
         
-        
-        // Quick Ask Button Click Handlers
-        const quickBtns = document.querySelectorAll('.ai-quick-btn');
-        quickBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                if(aiInput) {
-                    aiInput.value = btn.textContent.trim().replace('⚡ ', '').replace('💎 ', '').replace('💰 ', '').replace('📅 ', '');
-                    handleSend();
-                }
-            });
-        });
-
         if(aiSendBtn && aiInput) {
             aiSendBtn.addEventListener('click', handleSend);
             aiInput.addEventListener('keypress', (e) => {
@@ -464,6 +305,86 @@
     </script>
 </body>
 </html>
+"""
 
-</body>
-</html>
+def process_file(filename):
+    with open(filename, 'r', encoding='utf-8') as f:
+        content = f.read()
+        
+    # Extract just the <main>...</main> content
+    main_match = re.search(r'<main[^>]*>(.*?)</main>', content, re.DOTALL | re.IGNORECASE)
+    if not main_match:
+        # fallback, get body content between nav and footer roughly
+        main_match = re.search(r'</nav>(.*?)<footer', content, re.DOTALL | re.IGNORECASE)
+        
+    if main_match:
+        main_content = main_match.group(1)
+        
+        # Color & Font Translations
+        replacements = [
+            (r'bg-\[\#f6f6f5\]/70', 'bg-brand-light'),
+            (r'bg-\[\#f0f1ef\]/70', 'bg-brand-light'),
+            (r'bg-\[\#0a0a0a\]', 'bg-white'),
+            (r'text-\[\#2d2f2e\]', 'text-brand-dark'),
+            (r'text-\[\#575d5a\]', 'text-brand-gray'),
+            (r'text-\[\#366549\]', 'text-brand-primary'),
+            (r'text-\[\#705900\]', 'text-brand-primary'),
+            (r'bg-\[\#366549\]', 'bg-brand-primary'),
+            (r'bg-\[\#2a593e\]', 'bg-brand-dark'),
+            (r'text-\[\#c3f7d3\]', 'text-green-200'),
+            (r'border-\[\#acadac\]', 'border-gray-200'),
+            (r"font-\['Epilogue'\]", 'font-heading'),
+            (r"font-\['Manrope'\]", 'font-sans'),
+            (r'text-white', 'text-white'), # Keep white
+            (r'backdrop-blur-md', ''), # Remove old blur effects
+        ]
+        
+        for old, new in replacements:
+            main_content = re.sub(old, new, main_content)
+            
+        # Add a <main> wrapper back
+        new_content = f"{NEW_HEAD}\n<main class=\"w-full\">\n{main_content}\n</main>\n{NEW_FOOTER}\n{CHATBOT_HTML}"
+        
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+        print(f"Processed {filename}")
+    else:
+        print(f"Could not extract main content from {filename}")
+
+files_to_process = [
+    'about.html', 'contact.html', 'faq.html', 'journal.html', 
+    'portfolio.html', 'process.html', 'services.html', 'testimonials.html'
+]
+
+base_dir = '/Users/user/Documents/Elite 4'
+for file in files_to_process:
+    path = os.path.join(base_dir, file)
+    if os.path.exists(path):
+        process_file(path)
+
+# Finally, let's update index.html text specifically for the 48-hour rule
+index_path = os.path.join(base_dir, 'index.html')
+with open(index_path, 'r', encoding='utf-8') as f:
+    idx_content = f.read()
+
+# Update the 48-hour text in index.html
+idx_content = idx_content.replace(
+    "100% Saturday & Sunday Only",
+    "Weekend-Only Strike Force (Starts 7:30 AM)"
+)
+idx_content = idx_content.replace(
+    "We've revolutionized the industry with our 48-Hour Hardscape Strike. We provide comprehensive, high-end landscape architecture and hardscape construction.",
+    "We work weekends only but we start from 7:30 am until we're done. We try to strike everything in 48 hours, but if we need more time, we come back a different weekend or most likely the following weekend."
+)
+idx_content = idx_content.replace(
+    "Complete zero-disruption weekend builds",
+    "Strike everything in 48 hours (or the following weekend)"
+)
+# Inject chatbot into index.html
+if "id=\"ai-widget-container\"" not in idx_content:
+    idx_content = idx_content.replace("</body>", f"{CHATBOT_HTML}\n</body>")
+
+with open(index_path, 'w', encoding='utf-8') as f:
+    f.write(idx_content)
+    
+print("Updated index.html")

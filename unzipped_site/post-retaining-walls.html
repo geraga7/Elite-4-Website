@@ -103,9 +103,7 @@
             <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="portfolio.html">Portfolio</a>
             <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="process.html">Process</a>
             <a class="font-heading text-3xl font-black uppercase text-brand-dark hover:text-brand-primary transition-colors" href="journal.html">Journal</a>
-            <a href="contact.html" class="mt-6 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-center shadow-lg">
-<span class="block text-base font-bold">Request Consultation <i class="fas fa-arrow-right ml-2"></i></span><span class="block text-[10px] font-normal uppercase tracking-wider opacity-90 mt-0.5">Guaranteed 48+ Hour Turnaround</span>
-</a>
+            <a href="contact.html" class="mt-6 bg-brand-primary text-white px-8 py-4 rounded-full font-bold text-center shadow-lg">Request Consultation</a>
         </div>
     </div>
 
@@ -230,80 +228,6 @@
         }
     </script>
 
-    
-    <!-- Interactive Estimator & Slider JS -->
-    <script>
-    window.addEventListener('load', () => {
-        // Estimator Logic
-        const estType = document.getElementById('est-type');
-        const estSize = document.getElementById('est-size');
-        const estPrice = document.getElementById('est-price');
-        const estTime = document.getElementById('est-time');
-
-        const pricing = {
-            patio: { standard: "$25,000 - $40,000", premium: "$40,000 - $70,000", compound: "$70,000 - $120,000+" },
-            wall: { standard: "$18,000 - $35,000", premium: "$35,000 - $60,000", compound: "$60,000 - $95,000+" },
-            pool: { standard: "$65,000 - $95,000", premium: "$95,000 - $150,000", compound: "$150,000 - $250,000+" },
-            full: { standard: "$90,000 - $140,000", premium: "$140,000 - $220,000", compound: "$220,000 - $400,000+" }
-        };
-
-        const timelines = {
-            standard: "48+ Hours (Fri Eve - Sun Sunset)",
-            premium: "48+ Hours (Rollover to 2nd Weekend)",
-            compound: "48+ Hours (Dedicated 2-3 Weekends)"
-        };
-
-        function updateEstimator() {
-            if(estType && estSize && estPrice && estTime) {
-                const t = estType.value;
-                const s = estSize.value;
-                estPrice.textContent = pricing[t][s];
-                estTime.textContent = timelines[s];
-            }
-        }
-
-        if(estType && estSize) {
-            estType.addEventListener('change', updateEstimator);
-            estSize.addEventListener('change', updateEstimator);
-        }
-
-        // Before/After Slider Logic
-        const baContainer = document.getElementById('ba-container');
-        const baBefore = document.getElementById('ba-before');
-        const baHandle = document.getElementById('ba-handle');
-        const baBeforeImg = document.getElementById('ba-before-img');
-
-        if(baContainer && baBefore && baHandle && baBeforeImg) {
-            function adjustWidth() {
-                baBeforeImg.style.width = baContainer.offsetWidth + 'px';
-            }
-            adjustWidth();
-            window.addEventListener('resize', adjustWidth);
-
-            let isDragging = false;
-
-            function onMove(e) {
-                if(!isDragging) return;
-                const rect = baContainer.getBoundingClientRect();
-                let x = (e.clientX || e.touches[0].clientX) - rect.left;
-                x = Math.max(0, Math.min(x, rect.width));
-                const pct = (x / rect.width) * 100;
-                baBefore.style.width = pct + '%';
-                baHandle.style.left = pct + '%';
-            }
-
-            baHandle.addEventListener('mousedown', () => isDragging = true);
-            baContainer.addEventListener('mouseup', () => isDragging = false);
-            baContainer.addEventListener('mouseleave', () => isDragging = false);
-            baContainer.addEventListener('mousemove', onMove);
-
-            baHandle.addEventListener('touchstart', () => isDragging = true);
-            baContainer.addEventListener('touchend', () => isDragging = false);
-            baContainer.addEventListener('touchmove', onMove);
-        }
-    });
-    </script>
-
     <!-- AI Concierge Widget -->
     <div id="ai-widget-container" class="fixed bottom-6 right-6 z-[200]">
         <!-- Chat Button -->
@@ -333,24 +257,6 @@
             </div>
             
             <!-- Chat Area -->
-            
-            <!-- Quick Ask Prompts -->
-            <div class="px-5 py-3 bg-brand-light/40 border-t border-b border-gray-100 flex flex-wrap gap-2 max-h-28 overflow-y-auto">
-                <span class="text-[10px] font-bold text-brand-dark uppercase tracking-wider w-full block mb-1"><i class="fas fa-bolt text-brand-primary mr-1"></i> Interactive Quick Prompts:</span>
-                <button class="ai-quick-btn bg-white hover:bg-brand-primary hover:text-white text-brand-dark border border-gray-200 text-xs px-3 py-1.5 rounded-full transition shadow-sm font-medium flex items-center gap-1.5">
-                    ⚡ 48+ Hour Availability
-                </button>
-                <button class="ai-quick-btn bg-white hover:bg-brand-primary hover:text-white text-brand-dark border border-gray-200 text-xs px-3 py-1.5 rounded-full transition shadow-sm font-medium flex items-center gap-1.5">
-                    💎 Tier-1 Materials
-                </button>
-                <button class="ai-quick-btn bg-white hover:bg-brand-primary hover:text-white text-brand-dark border border-gray-200 text-xs px-3 py-1.5 rounded-full transition shadow-sm font-medium flex items-center gap-1.5">
-                    💰 Investment Tiers
-                </button>
-                <button class="ai-quick-btn bg-white hover:bg-brand-primary hover:text-white text-brand-dark border border-gray-200 text-xs px-3 py-1.5 rounded-full transition shadow-sm font-medium flex items-center gap-1.5">
-                    📅 Meet The Founders
-                </button>
-            </div>
-
             <div id="ai-messages" class="p-5 h-80 overflow-y-auto bg-brand-light/30 flex flex-col gap-4 text-sm font-sans">
                 <div class="bg-white p-4 rounded-2xl rounded-tl-sm shadow-sm border border-gray-100 self-start max-w-[85%]">
                     <p class="text-brand-gray leading-relaxed">Hi! I'm the Elite 4 Assistant. You can ask me questions about our services, process, or hours.</p>
@@ -442,18 +348,6 @@
             }, 800);
         }
         
-        
-        // Quick Ask Button Click Handlers
-        const quickBtns = document.querySelectorAll('.ai-quick-btn');
-        quickBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                if(aiInput) {
-                    aiInput.value = btn.textContent.trim().replace('⚡ ', '').replace('💎 ', '').replace('💰 ', '').replace('📅 ', '');
-                    handleSend();
-                }
-            });
-        });
-
         if(aiSendBtn && aiInput) {
             aiSendBtn.addEventListener('click', handleSend);
             aiInput.addEventListener('keypress', (e) => {

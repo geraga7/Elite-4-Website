@@ -1,18 +1,17 @@
-Traceback (most recent call last):
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
-    exec(code, run_globals)
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 1297, in <module>
-    test(
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 1252, in test
-    with ServerClass(addr, HandlerClass) as httpd:
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 452, in __init__
-    self.server_bind()
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 1295, in server_bind
-    return super().server_bind()
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/server.py", line 138, in server_bind
-    socketserver.TCPServer.server_bind(self)
-  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socketserver.py", line 466, in server_bind
-    self.socket.bind(self.server_address)
-OSError: [Errno 48] Address already in use
+::1 - - [14/May/2026 22:06:40] "GET / HTTP/1.1" 200 -
+::1 - - [14/May/2026 22:06:40] "GET /hero-pathway.webp HTTP/1.1" 200 -
+::1 - - [14/May/2026 22:06:41] "GET /landscape_team.webp HTTP/1.1" 200 -
+::1 - - [14/May/2026 22:06:41] "GET /luxury_patio.webp HTTP/1.1" 200 -
+::1 - - [14/May/2026 22:06:41] "GET /retaining_wall.webp HTTP/1.1" 200 -
+::1 - - [14/May/2026 22:06:41] "GET /modern_pool.webp HTTP/1.1" 200 -
+::1 - - [14/May/2026 22:06:41] code 404, message File not found
+::1 - - [14/May/2026 22:06:41] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [14/May/2026 22:07:09] "GET /about.html HTTP/1.1" 200 -
+::1 - - [14/May/2026 22:07:34] "GET /services.html HTTP/1.1" 200 -
+::1 - - [16/May/2026 01:19:19] "GET /index.html HTTP/1.1" 200 -
+::1 - - [16/May/2026 01:19:20] code 404, message File not found
+::1 - - [16/May/2026 01:19:20] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [16/May/2026 01:30:28] "GET /portfolio.html HTTP/1.1" 200 -
+::1 - - [16/May/2026 01:30:29] "GET /8k_luxury_garden.png HTTP/1.1" 200 -
+::1 - - [16/May/2026 01:30:29] "GET /8k_modern_patio.png HTTP/1.1" 200 -
+::1 - - [16/May/2026 01:30:29] "GET /8k_water_feature.png HTTP/1.1" 200 -
