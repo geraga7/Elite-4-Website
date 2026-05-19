@@ -3,22 +3,22 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>The Art of Limestone Retaining Walls | The Elite 4 Journal MN</title>
-    <meta name="description" content="Explore the structural engineering and clinical minimalist beauty of natural limestone retaining walls in Minnesota. An authoritative guide by The Elite 4."/>
+    <title>The Art of Limestone Retaining Walls | 4 Elite Landscapers Journal MN</title>
+    <meta name="description" content="Explore the structural engineering and clinical minimalist beauty of natural limestone retaining walls in Minnesota. An authoritative guide by 4 Elite Landscapers."/>
     <meta name="keywords" content="limestone retaining walls guide, structural hardscaping MN, natural stone wall construction, retaining wall drainage, Minneapolis masonry"/>
-    <meta name="author" content="The Elite 4"/>
+    <meta name="author" content="4 Elite Landscapers"/>
     <meta name="robots" content="index, follow"/>
-    <meta property="og:title" content="The Art of Limestone Retaining Walls | The Elite 4 Journal MN"/>
-    <meta property="og:description" content="Explore the structural engineering and clinical minimalist beauty of natural limestone retaining walls in Minnesota. An authoritative guide by The Elite 4."/>
+    <meta property="og:title" content="The Art of Limestone Retaining Walls | 4 Elite Landscapers Journal MN"/>
+    <meta property="og:description" content="Explore the structural engineering and clinical minimalist beauty of natural limestone retaining walls in Minnesota. An authoritative guide by 4 Elite Landscapers."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://elite4landscaping.com/post-retaining-walls.html"/>
     <meta property="og:image" content="https://elite4landscaping.com/8k_luxury_garden.png"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="The Art of Limestone Retaining Walls | The Elite 4 Journal MN"/>
-    <meta name="twitter:description" content="Explore the structural engineering and clinical minimalist beauty of natural limestone retaining walls in Minnesota. An authoritative guide by The Elite 4."/>
+    <meta name="twitter:title" content="The Art of Limestone Retaining Walls | 4 Elite Landscapers Journal MN"/>
+    <meta name="twitter:description" content="Explore the structural engineering and clinical minimalist beauty of natural limestone retaining walls in Minnesota. An authoritative guide by 4 Elite Landscapers."/>
     <link rel="canonical" href="https://elite4landscaping.com/post-retaining-walls.html"/>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <script>
         tailwind.config = {
@@ -26,16 +26,21 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0f4a23',
-                            primary: '#12a638',
-                            light: '#e8f3ec',
+                            dark: '#0a1910',      /* Very deep forest green/black */
+                            primary: '#1b4332',   /* Rich luxury emerald */
+                            light: '#f5f7f5',     /* Soft pearl white */
+                            accent: '#d4af37',    /* Metallic gold */
                             text: '#2d3748',
                             gray: '#718096'
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                        heading: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
+                        'gold': '0 4px 20px 0 rgba(212, 175, 55, 0.3)',
                     }
                 }
             }
@@ -49,19 +54,115 @@
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         }
         .wavy-bg {
-            background: linear-gradient(to bottom, #e8f3ec 0%, #e8f3ec 85%, #ffffff 85%, #ffffff 100%);
+            background: linear-gradient(to bottom, #f5f7f5 0%, #f5f7f5 85%, #ffffff 85%, #ffffff 100%);
         }
         .curved-bottom {
             border-bottom-left-radius: 50% 10%;
             border-bottom-right-radius: 50% 10%;
         }
-        .mask-blob {
-            clip-path: path('M45.7,-76.1C58.9,-69.3,69.2,-55.4,78.2,-41.2C87.2,-27,94.9,-12.4,93.5,1.5C92.1,15.4,81.6,28.6,71.4,40.5C61.2,52.4,51.3,63,39.2,71.2C27,79.4,12.6,85.2,-1.9,88.4C-16.4,91.6,-31.1,92.2,-44.6,86C-58.1,79.8,-70.4,66.8,-78.9,52.1C-87.4,37.4,-92.1,21,-91.3,5.3C-90.5,-10.4,-84.2,-25.3,-74.8,-37.7C-65.4,-50.1,-52.9,-60.1,-39.6,-66.9C-26.3,-73.7,-12.2,-77.3,1.6,-79.2C15.4,-81.1,32.5,-82.9,45.7,-76.1Z');
-            transform: scale(5) translate(10px, 10px);
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
         }
-    </style>
+        .glassmorphism-dark {
+            background: rgba(10, 25, 16, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+/* Cinematic & Animation Styles */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.cinematic-bg {
+    background: radial-gradient(at 0% 0%, rgba(212,175,55,0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(27,67,50,0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(212,175,55,0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(255,255,255,1) 0px, transparent 50%),
+                #fafbfa;
+    background-size: 200% 200%;
+    animation: gradientBG 20s ease infinite;
+}
+.cinematic-overlay {
+    background: linear-gradient(to bottom, rgba(10, 25, 16, 0.3) 0%, rgba(0,0,0,0.8) 100%);
+    mix-blend-mode: multiply;
+}
+.depth-of-field {
+    filter: drop-shadow(0 25px 35px rgba(0,0,0,0.3));
+}
+.atmospheric-lighting {
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, rgba(10,25,16,0.6) 100%);
+}
+.float-cta {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 150;
+    animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+</style>
+
+<style>
+/* Floating Particle Background */
+.elite-bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:hidden}
+.elite-particle{position:absolute;border-radius:50%;opacity:0;animation:eliteFloat linear infinite}
+@keyframes eliteFloat{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:.15}90%{opacity:.15}100%{opacity:0;transform:translateY(-10vh) scale(1)}}
+/* Scroll Reveal Animations */
+.scroll-reveal{opacity:0;transform:translateY(60px);transition:opacity 0.8s cubic-bezier(.22,1,.36,1),transform 0.8s cubic-bezier(.22,1,.36,1)}
+.scroll-reveal.revealed{opacity:1;transform:translateY(0)}
+.scroll-reveal-left{opacity:0;transform:translateX(-80px);transition:opacity 0.8s cubic-bezier(.22,1,.36,1),transform 0.8s cubic-bezier(.22,1,.36,1)}
+.scroll-reveal-left.revealed{opacity:1;transform:translateX(0)}
+.scroll-reveal-right{opacity:0;transform:translateX(80px);transition:opacity 0.8s cubic-bezier(.22,1,.36,1),transform 0.8s cubic-bezier(.22,1,.36,1)}
+.scroll-reveal-right.revealed{opacity:1;transform:translateX(0)}
+.scroll-reveal-scale{opacity:0;transform:scale(.85);transition:opacity 0.8s cubic-bezier(.22,1,.36,1),transform 0.8s cubic-bezier(.22,1,.36,1)}
+.scroll-reveal-scale.revealed{opacity:1;transform:scale(1)}
+/* Parallax float */
+.parallax-float{transition:transform .15s ease-out}
+/* Scroll progress bar */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#d4af37,#1b4332);z-index:9999;transition:width .1s linear;width:0}
+/* Navbar shrink on scroll */
+nav.scrolled{backdrop-filter:blur(20px);background:rgba(255,255,255,.90)!important;box-shadow:0 10px 40px rgba(0,0,0,.08); border-bottom: 1px solid rgba(212,175,55,0.2);}
+/* Counter animation */
+.count-up{display:inline-block}
+</style>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LandscapeProfessionals",
+      "name": "4 Elite Landscapers",
+      "image": "https://elite4landscaping.com/8k_luxury_garden.png",
+      "@id": "",
+      "url": "https://elite4landscaping.com",
+      "telephone": "+16125550198",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Luxury Lane",
+        "addressLocality": "Minneapolis",
+        "addressRegion": "MN",
+        "postalCode": "55401",
+        "addressCountry": "US"
+      },
+      "areaServed": ["Minneapolis", "Saint Paul", "Edina", "Wayzata", "Minnetonka", "River Falls, WI"],
+      "priceRange": "$$$$"
+    }
+    </script>
+
 </head>
 <body class="font-sans text-brand-text bg-white antialiased overflow-x-hidden">
+<div id="scroll-progress"></div>
 
     <!-- Top Bar -->
     <div class="bg-brand-dark text-white text-xs py-3 px-6 hidden md:flex justify-between items-center">
@@ -78,13 +179,13 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="bg-white py-4 px-6 md:px-12 flex justify-between items-center shadow-sm sticky top-0 z-50">
-        <a href="index.html" class="flex items-center gap-2">
-            <i class="fas fa-leaf text-brand-primary text-3xl"></i>
-            <span class="font-heading font-black text-2xl text-brand-dark uppercase tracking-tight">The Elite 4</span>
+    <nav class="glassmorphism py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 transition-all duration-300">
+        <a href="index.html" class="flex items-center gap-3">
+            <img src="./logo.jpg" alt="4 Elite Landscapers Logo" class="h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-brand-primary shadow-md hover:scale-105 transition-transform object-cover"/>
+            <span class="font-heading font-black text-xl md:text-2xl text-brand-dark uppercase tracking-tight">4 Elite Landscapers</span>
         </a>
         <div class="hidden lg:flex gap-8 font-semibold text-sm">
-            <a href="index.html" class="text-brand-primary">Home</a>
+            <a href="index.html" class="hover:text-brand-primary transition">Home</a>
             <a href="about.html" class="hover:text-brand-primary transition">About Us</a>
             <a href="services.html" class="hover:text-brand-primary transition">Services</a>
             <a href="portfolio.html" class="hover:text-brand-primary transition">Portfolio</a>
@@ -122,7 +223,6 @@
         </div>
     </div>
 
-
 <main class="w-full pt-32 pb-20 px-6 max-w-4xl mx-auto">
     <div class="mb-10 text-center">
         <span class="font-sans text-xs uppercase tracking-widest text-brand-primary mb-4 block font-bold">Engineering</span>
@@ -147,9 +247,9 @@
 <footer class="bg-[#0a0a0a] text-white pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div>
-                <a href="index.html" class="flex items-center gap-2 mb-6">
-                    <i class="fas fa-leaf text-brand-primary text-3xl"></i>
-                    <span class="font-heading font-black text-2xl uppercase tracking-tight">The Elite 4</span>
+                <a href="index.html" class="flex items-center gap-3 mb-6">
+                    <img src="./logo.jpg" alt="4 Elite Landscapers Logo" class="h-10 w-10 rounded-full border border-brand-primary shadow-sm object-cover"/>
+                    <span class="font-heading font-black text-xl uppercase tracking-tight text-white">4 Elite Landscapers</span>
                 </a>
                 <p class="text-gray-400 text-sm leading-relaxed mb-6">
                     Minnesota's premier landscaping atelier. Symmetrically designed, built with grit, finished with grace.
@@ -214,7 +314,7 @@
         </div>
         
         <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-4">
-            <p class="text-sm text-gray-400">© 2026 The Elite 4. Architectural Landscaping Excellence.</p>
+            <p class="text-sm text-gray-400">© 2026 4 Elite Landscapers. Architectural Landscaping Excellence.</p>
             <div class="flex gap-6 text-sm text-gray-400">
                 <a href="#" class="hover:text-brand-primary transition">Terms & Conditions</a>
                 <a href="#" class="hover:text-brand-primary transition">Privacy Policy</a>
@@ -222,8 +322,6 @@
         </div>
     </footer>
 
-
-    
     <!-- Custom JS -->
     <script>
         // Mobile Menu
@@ -243,80 +341,6 @@
                 document.body.style.overflow = '';
             });
         }
-    </script>
-
-    
-    <!-- Interactive Estimator & Slider JS -->
-    <script>
-    window.addEventListener('load', () => {
-        // Estimator Logic
-        const estType = document.getElementById('est-type');
-        const estSize = document.getElementById('est-size');
-        const estPrice = document.getElementById('est-price');
-        const estTime = document.getElementById('est-time');
-
-        const pricing = {
-            patio: { standard: "$25,000 - $40,000", premium: "$40,000 - $70,000", compound: "$70,000 - $120,000+" },
-            wall: { standard: "$18,000 - $35,000", premium: "$35,000 - $60,000", compound: "$60,000 - $95,000+" },
-            pool: { standard: "$65,000 - $95,000", premium: "$95,000 - $150,000", compound: "$150,000 - $250,000+" },
-            full: { standard: "$90,000 - $140,000", premium: "$140,000 - $220,000", compound: "$220,000 - $400,000+" }
-        };
-
-        const timelines = {
-            standard: "48+ Hours (Fri Eve - Sun Sunset)",
-            premium: "48+ Hours (Rollover to 2nd Weekend)",
-            compound: "48+ Hours (Dedicated 2-3 Weekends)"
-        };
-
-        function updateEstimator() {
-            if(estType && estSize && estPrice && estTime) {
-                const t = estType.value;
-                const s = estSize.value;
-                estPrice.textContent = pricing[t][s];
-                estTime.textContent = timelines[s];
-            }
-        }
-
-        if(estType && estSize) {
-            estType.addEventListener('change', updateEstimator);
-            estSize.addEventListener('change', updateEstimator);
-        }
-
-        // Before/After Slider Logic
-        const baContainer = document.getElementById('ba-container');
-        const baBefore = document.getElementById('ba-before');
-        const baHandle = document.getElementById('ba-handle');
-        const baBeforeImg = document.getElementById('ba-before-img');
-
-        if(baContainer && baBefore && baHandle && baBeforeImg) {
-            function adjustWidth() {
-                baBeforeImg.style.width = baContainer.offsetWidth + 'px';
-            }
-            adjustWidth();
-            window.addEventListener('resize', adjustWidth);
-
-            let isDragging = false;
-
-            function onMove(e) {
-                if(!isDragging) return;
-                const rect = baContainer.getBoundingClientRect();
-                let x = (e.clientX || e.touches[0].clientX) - rect.left;
-                x = Math.max(0, Math.min(x, rect.width));
-                const pct = (x / rect.width) * 100;
-                baBefore.style.width = pct + '%';
-                baHandle.style.left = pct + '%';
-            }
-
-            baHandle.addEventListener('mousedown', () => isDragging = true);
-            baContainer.addEventListener('mouseup', () => isDragging = false);
-            baContainer.addEventListener('mouseleave', () => isDragging = false);
-            baContainer.addEventListener('mousemove', onMove);
-
-            baHandle.addEventListener('touchstart', () => isDragging = true);
-            baContainer.addEventListener('touchend', () => isDragging = false);
-            baContainer.addEventListener('touchmove', onMove);
-        }
-    });
     </script>
 
     <!-- AI Concierge Widget -->
@@ -456,8 +480,7 @@
                 aiMessages.scrollTop = aiMessages.scrollHeight;
             }, 800);
         }
-        
-        
+
         // Quick Ask Button Click Handlers
         const quickBtns = document.querySelectorAll('.ai-quick-btn');
         quickBtns.forEach(btn => {
@@ -477,8 +500,105 @@
         }
     });
     </script>
+
+<script>
+(function(){
+  // Scroll progress bar
+  const prog=document.getElementById('scroll-progress');
+  // Scroll reveal observer
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target)}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+
+  function initScrollEffects(){
+    // Tag sections for reveal
+    document.querySelectorAll('section,header,.grid>div,.bg-white.rounded-2xl,.bg-white.rounded-3xl,.bg-brand-dark.text-white.p-10').forEach((el,i)=>{
+      if(!el.classList.contains('scroll-reveal')&&!el.classList.contains('scroll-reveal-left')&&!el.classList.contains('scroll-reveal-scale')){
+        const classes=['scroll-reveal','scroll-reveal-left','scroll-reveal-right','scroll-reveal-scale'];
+        el.classList.add(classes[i%classes.length]);
+        el.style.transitionDelay=(i%4)*0.08+'s';
+        obs.observe(el);
+      }
+    });
+    // Parallax float on mouse
+    document.querySelectorAll('.blob-shape,.blob-shape-2').forEach(el=>{
+      el.classList.add('parallax-float');
+    });
+    document.addEventListener('mousemove',(e)=>{
+      const cx=e.clientX/window.innerWidth-.5;
+      const cy=e.clientY/window.innerHeight-.5;
+      document.querySelectorAll('.parallax-float').forEach(el=>{
+        el.style.transform=`translate(${cx*12}px,${cy*12}px)`;
+      });
+    });
+    // Scroll progress
+    window.addEventListener('scroll',()=>{
+      if(prog){
+        const h=document.documentElement.scrollHeight-window.innerHeight;
+        prog.style.width=(window.scrollY/h*100)+'%';
+      }
+      // Navbar shrink
+      const nav=document.querySelector('nav');
+      if(nav){nav.classList.toggle('scrolled',window.scrollY>80)}
+    });
+    // Count-up animation for stat numbers
+    document.querySelectorAll('.count-up').forEach(el=>{
+      const target=parseInt(el.textContent);
+      if(isNaN(target))return;
+      const io=new IntersectionObserver(entries=>{
+        if(entries[0].isIntersecting){
+          let current=0;const step=Math.max(1,Math.floor(target/40));
+          const timer=setInterval(()=>{current+=step;if(current>=target){current=target;clearInterval(timer)}el.textContent=current},30);
+          io.unobserve(el);
+        }
+      },{threshold:.5});
+      io.observe(el);
+    });
+  }
+
+  // Particle background
+  function initParticles(){
+    const canvas=document.createElement('div');
+    canvas.className='elite-bg-canvas';
+    canvas.setAttribute('aria-hidden','true');
+    document.body.prepend(canvas);
+    const colors=['#12a638','#0f4a23','#e8f3ec','#a7f3d0'];
+    for(let i=0;i<25;i++){
+      const p=document.createElement('div');
+      p.className='elite-particle';
+      const size=Math.random()*6+2;
+      p.style.cssText=`width:${size}px;height:${size}px;left:${Math.random()*100}%;background:${colors[i%colors.length]};animation-duration:${Math.random()*12+8}s;animation-delay:${Math.random()*10}s`;
+      canvas.appendChild(p);
+    }
+  }
+
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',()=>{initScrollEffects();initParticles()})}
+  else{initScrollEffects();initParticles()}
+})();
+</script>
+
+    <!-- Floating Left CTA -->
+    <a href="contact.html" class="float-cta bg-brand-dark text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 hover:scale-105 transition-transform border-2 border-brand-primary">
+        <i class="fas fa-calendar-check text-brand-primary text-xl"></i>
+        <div class="flex flex-col">
+            <span class="text-sm font-bold">Book 48h Strike</span>
+            <span class="text-[10px] text-gray-300 uppercase tracking-wider">Available Weekends</span>
+        </div>
+    </a>
+
 </body>
 </html>
+
+    <!-- Floating Left CTA -->
+    <a href="contact.html" class="float-cta bg-brand-dark text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 hover:scale-105 transition-transform border-2 border-brand-primary">
+        <i class="fas fa-calendar-check text-brand-primary text-xl"></i>
+        <div class="flex flex-col">
+            <span class="text-sm font-bold">Book 48h Strike</span>
+            <span class="text-[10px] text-gray-300 uppercase tracking-wider">Available Weekends</span>
+        </div>
+    </a>
 
 </body>
 </html>

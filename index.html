@@ -3,22 +3,22 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>The Elite 4 | Luxury Landscape Design & Master Hardscaping Minnesota</title>
-    <meta name="description" content="Experience Minnesota's premier weekend-only landscaping strike force. The Elite 4 specializes in luxury limestone retaining walls, geometric pools, and hardscapes deployed in 48+ hours."/>
-    <meta name="keywords" content="luxury landscaping Minnesota, limestone retaining walls Minneapolis, 48 hour hardscape deployment, geometric pool builders MN, premium outdoor living, The Elite 4 landscaping"/>
-    <meta name="author" content="The Elite 4"/>
+    <title>4 Elite Landscapers | Luxury Landscape Design & Master Hardscaping Minnesota</title>
+    <meta name="description" content="Experience Minnesota's premier weekend-only landscaping strike force. 4 Elite Landscapers specializes in luxury limestone retaining walls, geometric pools, and hardscapes deployed in 48+ hours."/>
+    <meta name="keywords" content="luxury landscaping Minnesota, limestone retaining walls Minneapolis, 48 hour hardscape deployment, geometric pool builders MN, premium outdoor living, 4 Elite Landscapers landscaping"/>
+    <meta name="author" content="4 Elite Landscapers"/>
     <meta name="robots" content="index, follow"/>
-    <meta property="og:title" content="The Elite 4 | Luxury Landscape Design & Master Hardscaping Minnesota"/>
-    <meta property="og:description" content="Experience Minnesota's premier weekend-only landscaping strike force. The Elite 4 specializes in luxury limestone retaining walls, geometric pools, and hardscapes deployed in 48+ hours."/>
+    <meta property="og:title" content="4 Elite Landscapers | Luxury Landscape Design & Master Hardscaping Minnesota"/>
+    <meta property="og:description" content="Experience Minnesota's premier weekend-only landscaping strike force. 4 Elite Landscapers specializes in luxury limestone retaining walls, geometric pools, and hardscapes deployed in 48+ hours."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://elite4landscaping.com/index.html"/>
     <meta property="og:image" content="https://elite4landscaping.com/8k_luxury_garden.png"/>
     <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="The Elite 4 | Luxury Landscape Design & Master Hardscaping Minnesota"/>
-    <meta name="twitter:description" content="Experience Minnesota's premier weekend-only landscaping strike force. The Elite 4 specializes in luxury limestone retaining walls, geometric pools, and hardscapes deployed in 48+ hours."/>
+    <meta name="twitter:title" content="4 Elite Landscapers | Luxury Landscape Design & Master Hardscaping Minnesota"/>
+    <meta name="twitter:description" content="Experience Minnesota's premier weekend-only landscaping strike force. 4 Elite Landscapers specializes in luxury limestone retaining walls, geometric pools, and hardscapes deployed in 48+ hours."/>
     <link rel="canonical" href="https://elite4landscaping.com/index.html"/>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
     <script>
         tailwind.config = {
@@ -26,16 +26,21 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#0f4a23',
-                            primary: '#12a638',
-                            light: '#e8f3ec',
+                            dark: '#0a1910',      /* Very deep forest green/black */
+                            primary: '#1b4332',   /* Rich luxury emerald */
+                            light: '#f5f7f5',     /* Soft pearl white */
+                            accent: '#d4af37',    /* Metallic gold */
                             text: '#2d3748',
                             gray: '#718096'
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                        heading: ['Playfair Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
+                        'gold': '0 4px 20px 0 rgba(212, 175, 55, 0.3)',
                     }
                 }
             }
@@ -49,19 +54,116 @@
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         }
         .wavy-bg {
-            background: linear-gradient(to bottom, #e8f3ec 0%, #e8f3ec 85%, #ffffff 85%, #ffffff 100%);
+            background: linear-gradient(to bottom, #f5f7f5 0%, #f5f7f5 85%, #ffffff 85%, #ffffff 100%);
         }
         .curved-bottom {
             border-bottom-left-radius: 50% 10%;
             border-bottom-right-radius: 50% 10%;
         }
-        .mask-blob {
-            clip-path: path('M45.7,-76.1C58.9,-69.3,69.2,-55.4,78.2,-41.2C87.2,-27,94.9,-12.4,93.5,1.5C92.1,15.4,81.6,28.6,71.4,40.5C61.2,52.4,51.3,63,39.2,71.2C27,79.4,12.6,85.2,-1.9,88.4C-16.4,91.6,-31.1,92.2,-44.6,86C-58.1,79.8,-70.4,66.8,-78.9,52.1C-87.4,37.4,-92.1,21,-91.3,5.3C-90.5,-10.4,-84.2,-25.3,-74.8,-37.7C-65.4,-50.1,-52.9,-60.1,-39.6,-66.9C-26.3,-73.7,-12.2,-77.3,1.6,-79.2C15.4,-81.1,32.5,-82.9,45.7,-76.1Z');
-            transform: scale(5) translate(10px, 10px);
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
         }
-    </style>
+        .glassmorphism-dark {
+            background: rgba(10, 25, 16, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+/* Cinematic & Animation Styles */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.cinematic-bg {
+    background: radial-gradient(at 0% 0%, rgba(212,175,55,0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(27,67,50,0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(212,175,55,0.05) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(255,255,255,1) 0px, transparent 50%),
+                #fafbfa;
+    background-size: 200% 200%;
+    animation: gradientBG 20s ease infinite;
+}
+.cinematic-overlay {
+    background: linear-gradient(to bottom, rgba(10, 25, 16, 0.3) 0%, rgba(0,0,0,0.8) 100%);
+    mix-blend-mode: multiply;
+}
+.depth-of-field {
+    filter: drop-shadow(0 25px 35px rgba(0,0,0,0.3));
+}
+.atmospheric-lighting {
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, rgba(10,25,16,0.6) 100%);
+}
+.float-cta {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 150;
+    animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+</style>
+
+<style>
+/* Floating Particle Background */
+.elite-bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;overflow:hidden}
+.elite-particle{position:absolute;border-radius:50%;opacity:0;animation:eliteFloat linear infinite}
+@keyframes eliteFloat{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:.15}90%{opacity:.15}100%{opacity:0;transform:translateY(-10vh) scale(1)}}
+/* Scroll Reveal Animations */
+.scroll-reveal{opacity:0;transform:translateY(60px);transition:opacity 0.8s cubic-bezier(.22,1,.36,1),transform 0.8s cubic-bezier(.22,1,.36,1)}
+.scroll-reveal.revealed{opacity:1;transform:translateY(0)}
+.scroll-reveal-left{opacity:0;transform:translateX(-80px);transition:opacity 0.8s cubic-bezier(.22,1,.36,1),transform 0.8s cubic-bezier(.22,1,.36,1)}
+.scroll-reveal-left.revealed{opacity:1;transform:translateX(0)}
+.scroll-reveal-right{opacity:0;transform:translateX(80px);transition:opacity 0.8s cubic-bezier(.22,1,.36,1),transform 0.8s cubic-bezier(.22,1,.36,1)}
+.scroll-reveal-right.revealed{opacity:1;transform:translateX(0)}
+.scroll-reveal-scale{opacity:0;transform:scale(.85);transition:opacity 0.8s cubic-bezier(.22,1,.36,1),transform 0.8s cubic-bezier(.22,1,.36,1)}
+.scroll-reveal-scale.revealed{opacity:1;transform:scale(1)}
+/* Parallax float */
+.parallax-float{transition:transform .15s ease-out}
+/* Scroll progress bar */
+#scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#d4af37,#1b4332);z-index:9999;transition:width .1s linear;width:0}
+/* Navbar shrink on scroll */
+nav.scrolled{backdrop-filter:blur(20px);background:rgba(255,255,255,.90)!important;box-shadow:0 10px 40px rgba(0,0,0,.08); border-bottom: 1px solid rgba(212,175,55,0.2);}
+/* Counter animation */
+.count-up{display:inline-block}
+</style>
+
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LandscapeProfessionals",
+      "name": "4 Elite Landscapers",
+      "image": "https://elite4landscaping.com/8k_luxury_garden.png",
+      "@id": "",
+      "url": "https://elite4landscaping.com",
+      "telephone": "+16125550198",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "100 Luxury Lane",
+        "addressLocality": "Minneapolis",
+        "addressRegion": "MN",
+        "postalCode": "55401",
+        "addressCountry": "US"
+      },
+      "areaServed": ["Minneapolis", "Saint Paul", "Edina", "Wayzata", "Minnetonka", "River Falls, WI"],
+      "priceRange": "$$$$"
+    }
+    </script>
+
 </head>
 <body class="font-sans text-brand-text bg-white antialiased overflow-x-hidden">
+<div id="scroll-progress"></div>
 
     <!-- Top Bar -->
     <div class="bg-brand-dark text-white text-xs py-3 px-6 hidden md:flex justify-between items-center">
@@ -78,18 +180,18 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="bg-white py-4 px-6 md:px-12 flex justify-between items-center shadow-sm sticky top-0 z-50">
-        <a href="index.html" class="flex items-center gap-2">
-            <i class="fas fa-leaf text-brand-primary text-3xl"></i>
-            <span class="font-heading font-black text-2xl text-brand-dark uppercase tracking-tight">The Elite 4</span>
+    <nav class="glassmorphism py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 transition-all duration-300">
+        <a href="index.html" class="flex items-center gap-3">
+            <img src="./logo.jpg" alt="4 Elite Landscapers Logo" class="h-12 w-12 md:h-14 md:w-14 rounded-full border-2 border-brand-primary shadow-md hover:scale-105 transition-transform object-cover"/>
+            <span class="font-heading font-black text-xl md:text-2xl text-brand-dark uppercase tracking-tight">4 Elite Landscapers</span>
         </a>
-        <div class="hidden lg:flex gap-8 font-semibold text-sm">
-            <a href="index.html" class="text-brand-primary">Home</a>
-            <a href="about.html" class="hover:text-brand-primary transition">About Us</a>
-            <a href="services.html" class="hover:text-brand-primary transition">Services</a>
-            <a href="portfolio.html" class="hover:text-brand-primary transition">Portfolio</a>
-            <a href="process.html" class="hover:text-brand-primary transition">Process</a>
-            <a href="journal.html" class="hover:text-brand-primary transition">Journal</a>
+        <div class="hidden lg:flex gap-8 font-semibold text-sm items-center">
+            <a href="index.html" class="text-white bg-brand-primary px-6 py-2.5 rounded-full shadow-gold font-bold hover:bg-brand-dark transition border border-brand-accent/30">Home</a>
+            <a href="about.html" class="text-brand-dark hover:text-brand-accent transition duration-300">About Us</a>
+            <a href="services.html" class="text-brand-dark hover:text-brand-accent transition duration-300">Services</a>
+            <a href="portfolio.html" class="text-brand-dark hover:text-brand-accent transition duration-300">Portfolio</a>
+            <a href="process.html" class="text-brand-dark hover:text-brand-accent transition duration-300">Process</a>
+            <a href="journal.html" class="text-brand-dark hover:text-brand-accent transition duration-300">Journal</a>
         </div>
         <div class="hidden lg:flex items-center gap-6">
             <button class="text-brand-dark hover:text-brand-primary"><i class="fas fa-search text-lg"></i></button>
@@ -124,49 +226,34 @@
 
 
     <!-- Hero -->
-    <header class="bg-brand-light pt-20 pb-32 px-6 md:px-12 relative curved-bottom overflow-hidden">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
-            <div class="w-full md:w-1/2">
-                <div class="flex items-center gap-2 text-brand-primary font-bold mb-4 uppercase tracking-widest text-sm">
-                    <i class="fas fa-seedling"></i>
-                    <span>Symmetry In Nature</span>
-                </div>
-                <h1 class="font-heading text-5xl md:text-7xl font-extrabold text-brand-dark leading-[1.1] mb-6">
-                    Premier Landscape Design Across Minnesota.
-                </h1>
-                <p class="text-brand-gray text-lg mb-8 max-w-lg leading-relaxed">
-                    Architecture for the outdoors. We transform Minnesota estates into luminous sanctuaries using precision-cut stone and curated botanical compositions.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="contact.html" class="bg-brand-primary text-white px-8 py-4 rounded-full font-bold hover:bg-green-600 transition shadow-lg shadow-green-500/30">
-<span class="block text-base font-bold">Start Your 48+ Hour Masterwork <i class="fas fa-arrow-right ml-2"></i></span><span class="block text-[10px] font-normal uppercase tracking-wider opacity-90 mt-0.5">Book a free consultation with our founders</span>
-</a>
-                    <a href="portfolio.html" class="bg-white text-brand-dark border border-gray-200 px-8 py-4 rounded-full font-bold hover:border-brand-primary hover:text-brand-primary transition flex items-center gap-2">
-<span class="block text-base font-bold text-brand-dark group-hover:text-brand-primary transition">Explore Our Past Projects <i class="fas fa-arrow-right ml-2"></i></span><span class="block text-[10px] font-normal uppercase tracking-wider text-brand-gray mt-0.5">See precision stone & pool gallery</span>
-</a>
-                </div>
+    <header class="pt-48 pb-40 px-6 md:px-12 relative curved-bottom overflow-hidden bg-cover bg-center" style="background-image: url('./process_hero.jpg')">
+        <div class="absolute inset-0 bg-black/50 mix-blend-multiply"></div>
+        <div class="absolute inset-0 cinematic-overlay"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+            <div class="glassmorphism inline-flex items-center gap-2 text-brand-accent font-bold px-6 py-2 rounded-full mb-6 uppercase tracking-widest text-xs shadow-gold">
+                <i class="fas fa-gem text-brand-accent"></i>
+                <span class="text-white">Symmetry In Nature</span>
             </div>
-            <div class="w-full md:w-1/2 relative h-[500px]">
-                <div class="absolute inset-0 blob-shape overflow-hidden shadow-2xl border-8 border-white bg-white">
-                    <img src="./hero-pathway.webp" alt="Landscape" class="w-full h-full object-cover"/>
-                </div>
-                <!-- Small decorative elements -->
-                <div class="absolute bottom-10 -left-10 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
-                    <div class="bg-brand-light p-3 rounded-full text-brand-primary">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div>
-                        <p class="font-bold text-brand-dark leading-tight">48+ Hour</p>
-                        <p class="text-xs text-brand-gray">Strike Force</p>
-                    </div>
-                </div>
+            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.1] mb-8 drop-shadow-2xl">
+                Don't Wait Months For Perfection.
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl mb-12 max-w-3xl leading-relaxed font-light drop-shadow-md">
+                Other contractors leave your yard a mess for weeks. We are a specialized owner-operated strike force. We deploy exclusively on weekends, transforming your estate into a luxury 8K sanctuary in just 48+ hours. Uncompromising architectural precision—delivered while you relax.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 mt-2">
+                <a href="contact.html" class="bg-brand-primary text-white px-8 py-5 rounded-full font-bold hover:bg-brand-accent hover:text-brand-dark transition duration-500 shadow-gold border border-brand-primary hover:border-brand-accent group">
+<span class="block text-lg font-bold transition">Start Your 48+ Hour Masterwork <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i></span><span class="block text-xs font-normal uppercase tracking-wider text-brand-light mt-1">Book a free consultation with our founders</span>
+</a>
+                <a href="portfolio.html" class="glassmorphism-dark text-white px-8 py-5 rounded-full font-bold hover:bg-white hover:text-brand-dark transition duration-500 flex flex-col items-center group shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+<span class="block text-lg font-bold transition">Explore Our Past Projects <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition text-brand-accent group-hover:text-brand-dark"></i></span><span class="block text-xs font-normal uppercase tracking-wider text-gray-300 group-hover:text-brand-gray mt-1">See precision stone & pool gallery</span>
+</a>
             </div>
         </div>
         <!-- Decorative background elements -->
-        <svg class="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0,50 C320,150 420,-50 1440,50 L1440,100 L0,100 Z"></path></svg>
+        <svg class="absolute bottom-0 left-0 w-full z-10" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg"><path fill="#ffffff" d="M0,50 C320,150 420,-50 1440,50 L1440,100 L0,100 Z"></path></svg>
     </header>
 
-    <!-- The Elite 4 Story -->
+    <!-- 4 Elite Landscapers Story -->
     <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto relative">
         <div class="flex flex-col md:flex-row gap-16 items-center">
             <div class="w-full md:w-1/2 space-y-6">
@@ -175,7 +262,7 @@
                     We offer expert luxury hardscaping.
                 </h2>
                 <p class="text-brand-gray leading-relaxed">
-                    We are Gerald, Cole, Dom, and Gerardo. We met on a commercial landscaping job, instantly got along, and realized we shared the exact same uncompromising work ethic. We decided to form our own crew—The Elite 4.
+                    We are Gerald, Cole, Dom, and Gerardo. We met on a commercial landscaping job, instantly got along, and realized we shared the exact same uncompromising work ethic. We decided to form our own crew—4 Elite Landscapers.
                 </p>
                 <ul class="space-y-4 mt-6">
                     <li class="flex items-center gap-3 text-brand-dark font-medium">
@@ -189,7 +276,7 @@
                     </li>
                 </ul>
                 <a href="about.html" class="inline-block mt-8 bg-brand-dark text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800 transition">
-<span class="block text-base font-bold">Meet The Elite 4 Founders <i class="fas fa-arrow-right ml-2"></i></span><span class="block text-[10px] font-normal uppercase tracking-wider opacity-90 mt-0.5">Learn about our weekend strike force</span>
+<span class="block text-base font-bold">Meet 4 Elite Landscapers Founders <i class="fas fa-arrow-right ml-2"></i></span><span class="block text-[10px] font-normal uppercase tracking-wider opacity-90 mt-0.5">Learn about our weekend strike force</span>
 </a>
             </div>
             <div class="w-full md:w-1/2 relative">
@@ -209,34 +296,40 @@
     <!-- 4 Cards Overlapping -->
     <section class="px-6 md:px-12 max-w-7xl mx-auto -mt-10 mb-20 relative z-20">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] p-8 flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2 transition duration-300">
-                <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center text-brand-primary text-2xl mb-4">
+            <div class="glassmorphism rounded-3xl p-8 flex flex-col items-center text-center hover:-translate-y-3 hover:shadow-gold transition duration-500 group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="bg-brand-dark w-16 h-16 rounded-full flex items-center justify-center text-brand-accent text-2xl mb-4 relative z-10 shadow-lg group-hover:scale-110 transition duration-500">
                     <i class="fas fa-gem"></i>
                 </div>
-                <h3 class="font-heading font-bold text-brand-dark text-lg mb-2">Quality Services</h3>
-                <p class="text-sm text-brand-gray leading-relaxed">Zero compromises. We source Tier-1 materials for absolute perfection.</p>
+                <h3 class="font-heading font-bold text-brand-dark text-lg mb-2 relative z-10">Quality Services</h3>
+                <p class="text-sm text-brand-gray leading-relaxed relative z-10">Zero compromises. We source Tier-1 materials for absolute perfection.</p>
             </div>
-            <div class="bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] p-8 flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2 transition duration-300">
-                <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center text-brand-primary text-2xl mb-4">
+            
+            <div class="glassmorphism rounded-3xl p-8 flex flex-col items-center text-center hover:-translate-y-3 hover:shadow-gold transition duration-500 group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="bg-brand-dark w-16 h-16 rounded-full flex items-center justify-center text-brand-accent text-2xl mb-4 relative z-10 shadow-lg group-hover:scale-110 transition duration-500">
                     <i class="fas fa-shield-alt"></i>
                 </div>
-                <h3 class="font-heading font-bold text-brand-dark text-lg mb-2">Safety First</h3>
-                <p class="text-sm text-brand-gray leading-relaxed">Rigorous protocols protect your estate, family, and our crew.</p>
+                <h3 class="font-heading font-bold text-brand-dark text-lg mb-2 relative z-10">Safety First</h3>
+                <p class="text-sm text-brand-gray leading-relaxed relative z-10">Rigorous protocols protect your estate, family, and our crew.</p>
             </div>
-            <div class="bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] p-8 flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2 transition duration-300">
-                <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center text-brand-primary text-2xl mb-4">
+            
+            <div class="glassmorphism rounded-3xl p-8 flex flex-col items-center text-center hover:-translate-y-3 hover:shadow-gold transition duration-500 group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="bg-brand-dark w-16 h-16 rounded-full flex items-center justify-center text-brand-accent text-2xl mb-4 relative z-10 shadow-lg group-hover:scale-110 transition duration-500">
                     <i class="fas fa-handshake"></i>
                 </div>
-                <h3 class="font-heading font-bold text-brand-dark text-lg mb-2">Honest Pricing</h3>
-                <p class="text-sm text-brand-gray leading-relaxed">Transparent costs and timelines. Finished by Sunday sunset.</p>
+                <h3 class="font-heading font-bold text-brand-dark text-lg mb-2 relative z-10">Honest Pricing</h3>
+                <p class="text-sm text-brand-gray leading-relaxed relative z-10">Transparent costs and timelines. Finished by Sunday sunset.</p>
             </div>
-            <div class="bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.05)] p-8 flex flex-col items-center text-center border border-gray-100 hover:-translate-y-2 transition duration-300 relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-20 h-20 bg-brand-primary rounded-bl-full opacity-10"></div>
-                <div class="bg-brand-light w-16 h-16 rounded-full flex items-center justify-center text-brand-primary text-2xl mb-4 relative z-10">
+            
+            <div class="glassmorphism rounded-3xl p-8 flex flex-col items-center text-center hover:-translate-y-3 hover:shadow-gold transition duration-500 group relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div class="bg-brand-dark w-16 h-16 rounded-full flex items-center justify-center text-brand-accent text-2xl mb-4 relative z-10 shadow-lg group-hover:scale-110 transition duration-500">
                     <i class="fas fa-users"></i>
                 </div>
                 <h3 class="font-heading font-bold text-brand-dark text-lg mb-2 relative z-10">Expert Teamwork</h3>
-                <p class="text-sm text-brand-gray leading-relaxed relative z-10">The Elite 4 move in unison. A synchronized symphony of masonry.</p>
+                <p class="text-sm text-brand-gray leading-relaxed relative z-10">4 Elite Landscapers move in unison. A synchronized symphony of masonry.</p>
             </div>
         </div>
     </section>
@@ -260,7 +353,7 @@
                         <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">Luxury Patios</h3>
                         <p class="text-brand-gray text-sm mb-6 line-clamp-2">Premium natural stone patios, modern geometric fire pits, and fully integrated outdoor kitchens.</p>
                         <a href="services.html" class="inline-block bg-brand-light text-brand-primary font-bold py-2 px-6 rounded-full text-sm hover:bg-brand-primary hover:text-white transition">
-<span class="block text-sm font-bold">Explore Capability Details <i class="fas fa-arrow-right ml-1"></i></span><span class="block text-[9px] font-normal uppercase tracking-wider opacity-90 mt-0.5">View materials & structural specs</span>
+<span class="block text-sm font-bold">View Patio & Fire Pit Specs <i class="fas fa-arrow-right ml-1"></i></span><span class="block text-[9px] font-normal uppercase tracking-wider opacity-90 mt-0.5">Natural stone, outdoor kitchens & fire features</span>
 </a>
                     </div>
                 </div>
@@ -274,7 +367,7 @@
                         <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">Retaining Walls</h3>
                         <p class="text-brand-gray text-sm mb-6 line-clamp-2">Massive structural retaining walls engineered for safety and immense aesthetic appeal.</p>
                         <a href="services.html" class="inline-block bg-brand-light text-brand-primary font-bold py-2 px-6 rounded-full text-sm hover:bg-brand-primary hover:text-white transition">
-<span class="block text-sm font-bold">Explore Capability Details <i class="fas fa-arrow-right ml-1"></i></span><span class="block text-[9px] font-normal uppercase tracking-wider opacity-90 mt-0.5">View materials & structural specs</span>
+<span class="block text-sm font-bold">View Wall Engineering Details <i class="fas fa-arrow-right ml-1"></i></span><span class="block text-[9px] font-normal uppercase tracking-wider opacity-90 mt-0.5">Limestone structural grades & drainage systems</span>
 </a>
                     </div>
                 </div>
@@ -288,7 +381,7 @@
                         <h3 class="font-heading font-bold text-xl text-brand-dark mb-3">Geometric Pools</h3>
                         <p class="text-brand-gray text-sm mb-6 line-clamp-2">Breathtaking modern pool scapes that transform your backyard into an oasis.</p>
                         <a href="services.html" class="inline-block bg-brand-light text-brand-primary font-bold py-2 px-6 rounded-full text-sm hover:bg-brand-primary hover:text-white transition">
-<span class="block text-sm font-bold">Explore Capability Details <i class="fas fa-arrow-right ml-1"></i></span><span class="block text-[9px] font-normal uppercase tracking-wider opacity-90 mt-0.5">View materials & structural specs</span>
+<span class="block text-sm font-bold">View Pool Architecture Plans <i class="fas fa-arrow-right ml-1"></i></span><span class="block text-[9px] font-normal uppercase tracking-wider opacity-90 mt-0.5">Infinity edges, LED lighting & filtration specs</span>
 </a>
                     </div>
                 </div>
@@ -312,36 +405,36 @@
             
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <!-- Step 1 -->
-                <div class="border border-white/20 p-8 rounded-2xl hover:bg-white/5 transition group">
-                    <div class="w-16 h-16 rounded-full border-2 border-brand-primary flex items-center justify-center text-2xl mb-6 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition">
+                <div class="border border-white/20 p-8 rounded-2xl hover:bg-white/10 hover:border-brand-accent/50 hover:-translate-y-2 transition duration-300 group cursor-default">
+                    <div class="w-16 h-16 rounded-full border-2 border-brand-accent flex items-center justify-center text-2xl mb-6 text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                         01
                     </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">Consultation</h3>
-                    <p class="text-gray-400 text-sm">Our architects dictate the aesthetic and engineer a masterplan.</p>
+                    <h3 class="font-heading font-bold text-2xl mb-3 text-white">Consultation</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Our architects dictate the aesthetic and engineer a masterplan.</p>
                 </div>
                 <!-- Step 2 -->
-                <div class="border border-white/20 p-8 rounded-2xl hover:bg-white/5 transition group">
-                    <div class="w-16 h-16 rounded-full border-2 border-brand-primary flex items-center justify-center text-2xl mb-6 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition">
+                <div class="border border-white/20 p-8 rounded-2xl hover:bg-white/10 hover:border-brand-accent/50 hover:-translate-y-2 transition duration-300 group cursor-default">
+                    <div class="w-16 h-16 rounded-full border-2 border-brand-accent flex items-center justify-center text-2xl mb-6 text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                         02
                     </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">Site Prep</h3>
-                    <p class="text-gray-400 text-sm">Saturday 7:30 AM arrival with heavy machinery for precise excavation.</p>
+                    <h3 class="font-heading font-bold text-2xl mb-3 text-white">Site Prep</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Saturday 7:30 AM arrival with heavy machinery for precise excavation.</p>
                 </div>
                 <!-- Step 3 -->
-                <div class="border border-white/20 p-8 rounded-2xl hover:bg-white/5 transition group">
-                    <div class="w-16 h-16 rounded-full border-2 border-brand-primary flex items-center justify-center text-2xl mb-6 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition">
+                <div class="border border-white/20 p-8 rounded-2xl hover:bg-white/10 hover:border-brand-accent/50 hover:-translate-y-2 transition duration-300 group cursor-default">
+                    <div class="w-16 h-16 rounded-full border-2 border-brand-accent flex items-center justify-center text-2xl mb-6 text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                         03
                     </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">The Strike</h3>
-                    <p class="text-gray-400 text-sm">Relentless structural deployment operating from morning until dark.</p>
+                    <h3 class="font-heading font-bold text-2xl mb-3 text-white">The Strike</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Relentless structural deployment operating from morning until dark.</p>
                 </div>
                 <!-- Step 4 -->
-                <div class="border border-white/20 p-8 rounded-2xl hover:bg-white/5 transition group">
-                    <div class="w-16 h-16 rounded-full border-2 border-brand-primary flex items-center justify-center text-2xl mb-6 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition">
+                <div class="border border-white/20 p-8 rounded-2xl hover:bg-white/10 hover:border-brand-accent/50 hover:-translate-y-2 transition duration-300 group cursor-default">
+                    <div class="w-16 h-16 rounded-full border-2 border-brand-accent flex items-center justify-center text-2xl mb-6 text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                         04
                     </div>
-                    <h3 class="font-heading font-bold text-xl mb-3">The Handover</h3>
-                    <p class="text-gray-400 text-sm">Sunday completion or rollover to following weekend for perfection.</p>
+                    <h3 class="font-heading font-bold text-2xl mb-3 text-white">The Handover</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Sunday completion or rollover to following weekend for perfection.</p>
                 </div>
             </div>
         </div>
@@ -394,7 +487,7 @@
                     <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
                 <p class="text-gray-300 italic mb-8 leading-relaxed">
-                    "The Elite 4 lived up to their name. No subcontractors, just the four owners grinding to make our geometric pool landscape perfect."
+                    "4 Elite Landscapers lived up to their name. No subcontractors, just the four owners grinding to make our geometric pool landscape perfect."
                 </p>
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center font-bold text-xl">M</div>
@@ -449,6 +542,31 @@
                     </div>
                 </div>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                <div class="relative group rounded-3xl overflow-hidden h-[400px] scroll-reveal shadow-2xl">
+                    <img src="./firepit_lounge.png" alt="Firepit Lounge" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-sm py-3 px-8 rounded-full shadow-2xl whitespace-nowrap">
+                        <span class="font-bold text-brand-dark">Firepit Lounges</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-3xl overflow-hidden h-[400px] scroll-reveal shadow-2xl">
+                    <img src="./outdoor_kitchen.png" alt="Outdoor Kitchen" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-sm py-3 px-8 rounded-full shadow-2xl whitespace-nowrap">
+                        <span class="font-bold text-brand-dark">Outdoor Kitchens</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-3xl overflow-hidden h-[400px] scroll-reveal shadow-2xl">
+                    <img src="./garden_walkway.png" alt="Garden Walkway" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-sm py-3 px-8 rounded-full shadow-2xl whitespace-nowrap">
+                        <span class="font-bold text-brand-dark">Garden Walkways</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -580,7 +698,10 @@
                         <span class="flex items-center gap-1"><i class="fas fa-user text-brand-primary"></i> Admin</span>
                     </div>
                     <h3 class="font-heading font-bold text-lg text-brand-dark mb-4 leading-tight group-hover:text-brand-primary transition">The Importance of Symmetry in Luxury Hardscapes</h3>
-                    <a href="journal.html" class="text-sm font-bold text-brand-dark hover:text-brand-primary flex items-center gap-2 transition">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="post-symmetry.html" class="text-sm font-bold text-brand-dark hover:text-brand-primary flex items-center gap-2 transition group/cta">
+                        <span class="group-hover/cta:translate-x-1 transition-transform">Explore Symmetry Principles <i class="fas fa-arrow-right ml-1"></i></span>
+                    </a>
+                    <span class="block text-[9px] text-brand-gray uppercase tracking-wider mt-1">4 min read · Botanical geometry</span>
                 </div>
             </div>
             <!-- Post 2 -->
@@ -594,7 +715,10 @@
                         <span class="flex items-center gap-1"><i class="fas fa-user text-brand-primary"></i> Admin</span>
                     </div>
                     <h3 class="font-heading font-bold text-lg text-brand-dark mb-4 leading-tight group-hover:text-brand-primary transition">Choosing the right stone for limestone retaining walls</h3>
-                    <a href="journal.html" class="text-sm font-bold text-brand-dark hover:text-brand-primary flex items-center gap-2 transition">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="post-retaining-walls.html" class="text-sm font-bold text-brand-dark hover:text-brand-primary flex items-center gap-2 transition group/cta">
+                        <span class="group-hover/cta:translate-x-1 transition-transform">Explore Stone Selection Guide <i class="fas fa-arrow-right ml-1"></i></span>
+                    </a>
+                    <span class="block text-[9px] text-brand-gray uppercase tracking-wider mt-1">5 min read · Material science</span>
                 </div>
             </div>
             <!-- Post 3 -->
@@ -608,7 +732,10 @@
                         <span class="flex items-center gap-1"><i class="fas fa-user text-brand-primary"></i> Admin</span>
                     </div>
                     <h3 class="font-heading font-bold text-lg text-brand-dark mb-4 leading-tight group-hover:text-brand-primary transition">The right way to build a geometric pool scape</h3>
-                    <a href="journal.html" class="text-sm font-bold text-brand-dark hover:text-brand-primary flex items-center gap-2 transition">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="portfolio.html" class="text-sm font-bold text-brand-dark hover:text-brand-primary flex items-center gap-2 transition group/cta">
+                        <span class="group-hover/cta:translate-x-1 transition-transform">Explore Pool Engineering <i class="fas fa-arrow-right ml-1"></i></span>
+                    </a>
+                    <span class="block text-[9px] text-brand-gray uppercase tracking-wider mt-1">3 min read · Hydraulic design</span>
                 </div>
             </div>
             <!-- Post 4 -->
@@ -622,7 +749,10 @@
                         <span class="flex items-center gap-1"><i class="fas fa-user text-brand-primary"></i> Admin</span>
                     </div>
                     <h3 class="font-heading font-bold text-lg text-brand-dark mb-4 leading-tight group-hover:text-brand-primary transition">Prestige and precision in outdoor environments</h3>
-                    <a href="journal.html" class="text-sm font-bold text-brand-dark hover:text-brand-primary flex items-center gap-2 transition">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="about.html" class="text-sm font-bold text-brand-dark hover:text-brand-primary flex items-center gap-2 transition group/cta">
+                        <span class="group-hover/cta:translate-x-1 transition-transform">Explore Precision Standards <i class="fas fa-arrow-right ml-1"></i></span>
+                    </a>
+                    <span class="block text-[9px] text-brand-gray uppercase tracking-wider mt-1">4 min read · Our methodology</span>
                 </div>
             </div>
         </div>
@@ -640,7 +770,7 @@
                 Uncompromising Architectural Precision
             </h2>
             <p class="text-brand-gray text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                Explore our flagship Minnesota estate deployments captured in magnificent 8K super high resolution. Every cut, contour, and botanical composition is engineered for absolute visual dominance.
+                We refuse to cut corners. Explore our flagship Minnesota estate deployments captured in magnificent 8K resolution. Every stone, contour, and botanical composition is engineered by our founders for absolute visual dominance. See the elite standard for yourself.
             </p>
         </div>
 
@@ -714,14 +844,14 @@
                 <i class="fas fa-calculator animate-pulse"></i> Interactive Investment Estimator
             </div>
             <h2 class="font-heading text-4xl md:text-5xl font-black text-brand-dark tracking-tight mb-4">
-                Calculate Your 48+ Hour Masterwork
+                Lock In Your Weekend Strike
             </h2>
             <p class="text-brand-gray text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                Select your desired architectural hardscape parameters below to instantly generate a transparent baseline investment tier and execution timeline.
+                Stop guessing and start planning. Select your desired architectural hardscape parameters below to instantly generate a transparent investment estimate. Our schedule fills up months in advance—calculate your project and secure your weekend slot today.
             </p>
         </div>
 
-        <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-center bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-center bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100 mb-8">
             <!-- Parameter 1: Project Type -->
             <div class="space-y-3 text-left">
                 <label class="font-heading font-bold text-brand-dark text-sm block uppercase tracking-wider flex items-center gap-2">
@@ -747,17 +877,44 @@
                 </select>
             </div>
 
+            <!-- Parameter 3: Material Tier -->
+            <div class="space-y-3 text-left">
+                <label class="font-heading font-bold text-brand-dark text-sm block uppercase tracking-wider flex items-center gap-2">
+                    <i class="fas fa-cubes text-brand-primary"></i> 3. Material Tier
+                </label>
+                <select id="est-material" class="w-full bg-brand-light/50 border border-gray-200 rounded-2xl px-5 py-4 font-semibold text-brand-dark focus:outline-none focus:border-brand-primary transition shadow-sm text-sm cursor-pointer">
+                    <option value="tier1">Tier-1 Architectural Concrete</option>
+                    <option value="tier2">Imported Italian Porcelain</option>
+                    <option value="tier3">Custom Cut Natural Limestone</option>
+                </select>
+            </div>
+
+            <!-- Parameter 4: Add-ons -->
+            <div class="space-y-3 text-left">
+                <label class="font-heading font-bold text-brand-dark text-sm block uppercase tracking-wider flex items-center gap-2">
+                    <i class="fas fa-plus-circle text-brand-primary"></i> 4. Add-ons & Extras
+                </label>
+                <select id="est-addons" class="w-full bg-brand-light/50 border border-gray-200 rounded-2xl px-5 py-4 font-semibold text-brand-dark focus:outline-none focus:border-brand-primary transition shadow-sm text-sm cursor-pointer">
+                    <option value="none">Standard Execution</option>
+                    <option value="lighting">Atmospheric LED Lighting +$2k-5k</option>
+                    <option value="kitchen">Outdoor Kitchen Module +$15k-25k</option>
+                    <option value="both">Lighting & Kitchen +$17k-30k</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
             <!-- Calculation Output -->
-            <div class="bg-brand-dark text-white p-6 md:p-8 rounded-2xl shadow-2xl flex flex-col justify-center items-center text-center relative overflow-hidden border-b-4 border-brand-primary">
+            <div class="bg-brand-dark text-white p-6 md:p-10 rounded-3xl shadow-2xl flex flex-col justify-center items-center text-center relative overflow-hidden border-b-4 border-brand-primary">
                 <div class="absolute inset-0 bg-brand-primary/10 blob-shape pointer-events-none opacity-50"></div>
                 <div class="relative z-10 w-full">
-                    <span class="text-xs text-brand-primary font-bold uppercase tracking-widest block mb-1">Estimated Investment</span>
-                    <div id="est-price" class="text-3xl md:text-4xl font-heading font-black tracking-tight text-white mb-2">$25,000 - $45,000</div>
-                    <div class="w-full h-px bg-white/20 my-3"></div>
-                    <span class="text-xs text-gray-300 font-medium block flex items-center justify-center gap-1.5 mb-4">
+                    <span class="text-sm text-brand-primary font-bold uppercase tracking-widest block mb-2">Estimated Investment</span>
+                    <div id="est-price" class="text-4xl md:text-5xl font-heading font-black tracking-tight text-white mb-4">$25,000 - $45,000</div>
+                    <div class="w-full h-px bg-white/20 my-4 max-w-sm mx-auto"></div>
+                    <span class="text-sm text-gray-300 font-medium block flex items-center justify-center gap-2 mb-6">
                         <i class="fas fa-clock text-brand-primary"></i> <span id="est-time">48+ Hours (Fri Eve - Sun Sunset)</span>
                     </span>
-                    <a href="contact.html" class="block w-full bg-brand-primary hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full text-xs uppercase tracking-wider transition shadow-lg text-center">
+                    <a href="contact.html" class="inline-block bg-brand-primary hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full text-sm uppercase tracking-wider transition shadow-lg text-center">
 <span class="block text-base font-bold">Lock In This Rate <i class="fas fa-arrow-right ml-2"></i></span><span class="block text-[10px] font-normal uppercase tracking-wider opacity-90 mt-0.5">Secure weekend slot with $500 refundable deposit</span>
 </a>
                 </div>
@@ -786,16 +943,16 @@
             </span>
             
             <!-- After Image (Underneath) -->
-            <img src="./8k_water_feature.png" alt="After Masterpiece" class="w-full h-[500px] md:h-[600px] object-cover pointer-events-none"/>
+            <img src="./process_step4.jpg" alt="After Masterpiece" class="w-full h-[500px] md:h-[600px] object-cover pointer-events-none"/>
             <span class="absolute bottom-6 right-6 bg-brand-primary text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest z-20 shadow-lg">
                 After (Elite 4 Masterwork)
             </span>
 
             <!-- Before Image (On Top, Clipped) -->
             <div class="absolute inset-0 w-1/2 overflow-hidden z-10 border-r-4 border-brand-primary shadow-2xl" id="ba-before">
-                <img src="./hero-pathway.webp" alt="Before" class="w-full h-[500px] md:h-[600px] object-cover pointer-events-none max-w-none" style="width: 1000px;" id="ba-before-img"/>
+                <img src="./process_step2.jpg" alt="Before" class="w-full h-[500px] md:h-[600px] object-cover pointer-events-none max-w-none" style="width: 1000px;" id="ba-before-img"/>
                 <span class="absolute bottom-6 left-6 bg-brand-dark text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">
-                    Before (Standard Yard)
+                    Before (Site Prep)
                 </span>
             </div>
 
@@ -812,9 +969,9 @@
     <footer class="bg-[#0a0a0a] text-white pt-20 pb-8 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div>
-                <a href="index.html" class="flex items-center gap-2 mb-6">
-                    <i class="fas fa-leaf text-brand-primary text-3xl"></i>
-                    <span class="font-heading font-black text-2xl uppercase tracking-tight">The Elite 4</span>
+                <a href="index.html" class="flex items-center gap-3 mb-6">
+                    <img src="./logo.jpg" alt="4 Elite Landscapers Logo" class="h-10 w-10 rounded-full border border-brand-primary shadow-sm object-cover"/>
+                    <span class="font-heading font-black text-xl uppercase tracking-tight text-white">4 Elite Landscapers</span>
                 </a>
                 <p class="text-gray-400 text-sm leading-relaxed mb-6">
                     Minnesota's premier landscaping atelier. Symmetrically designed, built with grit, finished with grace.
@@ -879,7 +1036,7 @@
         </div>
         
         <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-4">
-            <p class="text-sm text-gray-400">© 2026 The Elite 4. Architectural Landscaping Excellence.</p>
+            <p class="text-sm text-gray-400">© 2026 4 Elite Landscapers. Architectural Landscaping Excellence.</p>
             <div class="flex gap-6 text-sm text-gray-400">
                 <a href="#" class="hover:text-brand-primary transition">Terms & Conditions</a>
                 <a href="#" class="hover:text-brand-primary transition">Privacy Policy</a>
@@ -917,14 +1074,30 @@
         // Estimator Logic
         const estType = document.getElementById('est-type');
         const estSize = document.getElementById('est-size');
+        const estMaterial = document.getElementById('est-material');
+        const estAddons = document.getElementById('est-addons');
         const estPrice = document.getElementById('est-price');
         const estTime = document.getElementById('est-time');
 
-        const pricing = {
-            patio: { standard: "$25,000 - $40,000", premium: "$40,000 - $70,000", compound: "$70,000 - $120,000+" },
-            wall: { standard: "$18,000 - $35,000", premium: "$35,000 - $60,000", compound: "$60,000 - $95,000+" },
-            pool: { standard: "$65,000 - $95,000", premium: "$95,000 - $150,000", compound: "$150,000 - $250,000+" },
-            full: { standard: "$90,000 - $140,000", premium: "$140,000 - $220,000", compound: "$220,000 - $400,000+" }
+        // Base values in thousands
+        const basePricing = {
+            patio: { standard: [25, 40], premium: [40, 70], compound: [70, 120] },
+            wall: { standard: [18, 35], premium: [35, 60], compound: [60, 95] },
+            pool: { standard: [65, 95], premium: [95, 150], compound: [150, 250] },
+            full: { standard: [90, 140], premium: [140, 220], compound: [220, 400] }
+        };
+
+        const materialMultipliers = {
+            tier1: 1.0,
+            tier2: 1.3,
+            tier3: 1.6
+        };
+
+        const addonPricing = {
+            none: [0, 0],
+            lighting: [2, 5],
+            kitchen: [15, 25],
+            both: [17, 30]
         };
 
         const timelines = {
@@ -937,14 +1110,32 @@
             if(estType && estSize && estPrice && estTime) {
                 const t = estType.value;
                 const s = estSize.value;
-                estPrice.textContent = pricing[t][s];
-                estTime.textContent = timelines[s];
+                const m = estMaterial ? estMaterial.value : 'tier1';
+                const a = estAddons ? estAddons.value : 'none';
+                
+                const base = basePricing[t][s];
+                const multi = materialMultipliers[m];
+                const add = addonPricing[a];
+                
+                const min = Math.round((base[0] * multi) + add[0]);
+                const max = Math.round((base[1] * multi) + add[1]);
+
+                estPrice.textContent = `$${min.toLocaleString()},000 - $${max.toLocaleString()},000`;
+                
+                let timeStr = timelines[s];
+                if(a === 'kitchen' || a === 'both') {
+                   timeStr += " + 1 Weekend";
+                }
+                estTime.textContent = timeStr;
             }
         }
 
         if(estType && estSize) {
             estType.addEventListener('change', updateEstimator);
             estSize.addEventListener('change', updateEstimator);
+            if(estMaterial) estMaterial.addEventListener('change', updateEstimator);
+            if(estAddons) estAddons.addEventListener('change', updateEstimator);
+            updateEstimator(); // initialize
         }
 
         // Before/After Slider Logic
@@ -1142,8 +1333,94 @@
         }
     });
     </script>
-</body>
-</html>
+
+<script>
+(function(){
+  // Scroll progress bar
+  const prog=document.getElementById('scroll-progress');
+  // Scroll reveal observer
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('revealed');obs.unobserve(e.target)}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+
+  function initScrollEffects(){
+    // Tag sections for reveal
+    document.querySelectorAll('section,header,.grid>div,.bg-white.rounded-2xl,.bg-white.rounded-3xl,.bg-brand-dark.text-white.p-10').forEach((el,i)=>{
+      if(!el.classList.contains('scroll-reveal')&&!el.classList.contains('scroll-reveal-left')&&!el.classList.contains('scroll-reveal-scale')){
+        const classes=['scroll-reveal','scroll-reveal-left','scroll-reveal-right','scroll-reveal-scale'];
+        el.classList.add(classes[i%classes.length]);
+        el.style.transitionDelay=(i%4)*0.08+'s';
+        obs.observe(el);
+      }
+    });
+    // Parallax float on mouse
+    document.querySelectorAll('.blob-shape,.blob-shape-2').forEach(el=>{
+      el.classList.add('parallax-float');
+    });
+    document.addEventListener('mousemove',(e)=>{
+      const cx=e.clientX/window.innerWidth-.5;
+      const cy=e.clientY/window.innerHeight-.5;
+      document.querySelectorAll('.parallax-float').forEach(el=>{
+        el.style.transform=`translate(${cx*12}px,${cy*12}px)`;
+      });
+    });
+    // Scroll progress
+    window.addEventListener('scroll',()=>{
+      if(prog){
+        const h=document.documentElement.scrollHeight-window.innerHeight;
+        prog.style.width=(window.scrollY/h*100)+'%';
+      }
+      // Navbar shrink
+      const nav=document.querySelector('nav');
+      if(nav){nav.classList.toggle('scrolled',window.scrollY>80)}
+    });
+    // Count-up animation for stat numbers
+    document.querySelectorAll('.count-up').forEach(el=>{
+      const target=parseInt(el.textContent);
+      if(isNaN(target))return;
+      const io=new IntersectionObserver(entries=>{
+        if(entries[0].isIntersecting){
+          let current=0;const step=Math.max(1,Math.floor(target/40));
+          const timer=setInterval(()=>{current+=step;if(current>=target){current=target;clearInterval(timer)}el.textContent=current},30);
+          io.unobserve(el);
+        }
+      },{threshold:.5});
+      io.observe(el);
+    });
+  }
+
+  // Particle background
+  function initParticles(){
+    const canvas=document.createElement('div');
+    canvas.className='elite-bg-canvas';
+    canvas.setAttribute('aria-hidden','true');
+    document.body.prepend(canvas);
+    const colors=['#12a638','#0f4a23','#e8f3ec','#a7f3d0'];
+    for(let i=0;i<25;i++){
+      const p=document.createElement('div');
+      p.className='elite-particle';
+      const size=Math.random()*6+2;
+      p.style.cssText=`width:${size}px;height:${size}px;left:${Math.random()*100}%;background:${colors[i%colors.length]};animation-duration:${Math.random()*12+8}s;animation-delay:${Math.random()*10}s`;
+      canvas.appendChild(p);
+    }
+  }
+
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',()=>{initScrollEffects();initParticles()})}
+  else{initScrollEffects();initParticles()}
+})();
+</script>
+
+
+    <!-- Floating Left CTA -->
+    <a href="contact.html" class="float-cta bg-brand-dark text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 hover:scale-105 transition-transform border-2 border-brand-primary">
+        <i class="fas fa-calendar-check text-brand-primary text-xl"></i>
+        <div class="flex flex-col">
+            <span class="text-sm font-bold">Book 48h Strike</span>
+            <span class="text-[10px] text-gray-300 uppercase tracking-wider">Available Weekends</span>
+        </div>
+    </a>
 
 </body>
 </html>
